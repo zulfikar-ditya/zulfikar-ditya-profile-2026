@@ -23,7 +23,7 @@ export default function Home() {
 				<div className="container mx-auto px-4 min-h-screen">
 					<div className="flex pt-10 items-center justify-center h-screen flex-col">
 						<div className="text-center">
-							<h1 className="text-8xl font-bold">
+							<h1 className="text-4xl md:text-8xl font-bold">
 								<SplitText
 									text="Zulfikar Ditya Antariksa."
 									className=""
@@ -38,7 +38,7 @@ export default function Home() {
 									textAlign="center"
 								/>
 							</h1>
-							<h2 className="mt-8 text-2xl font-bold">
+							<h2 className="mt-8 text-md md:text-2xl font-bold">
 								<TextType
 									text={[
 										"Backend Engineer | API Architecture | High-Performance Systems",
