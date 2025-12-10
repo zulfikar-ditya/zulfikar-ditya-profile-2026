@@ -17,7 +17,6 @@ export default function Home() {
 					rotationSpeed={1}
 					pillarWidth={4}
 					pillarRotation={25}
-					interactive={true}
 				/>
 
 				<div className="container mx-auto px-4 min-h-screen">
