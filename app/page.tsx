@@ -10,13 +10,26 @@ export default function Home() {
 		<main>
 			<SocialLinks />
 			<section id="hero-section" className="h-screen relative overflow-hidden">
-				<LightPillar
+				{/* <LightPillar
 					topColor="#00bba7"
 					bottomColor="#e12afb"
-					intensity={0.8}
-					rotationSpeed={1}
-					pillarWidth={4}
+					intensity={0.4}
+					rotationSpeed={0.5}
+					pillarWidth={5}
 					pillarRotation={25}
+				/> */}
+
+				<LightPillar
+					topColor="#5227FF"
+					bottomColor="#FF9FFC"
+					intensity={1.0}
+					rotationSpeed={0.4}
+					glowAmount={0.005}
+					pillarWidth={3.0}
+					pillarHeight={0.4}
+					noiseIntensity={0.5}
+					pillarRotation={45}
+					interactive={false}
 				/>
 
 				<div className="container mx-auto px-4 min-h-screen">
@@ -42,7 +55,7 @@ export default function Home() {
 									text={[
 										"Backend Engineer | API Architecture | High-Performance Systems",
 									]}
-									typingSpeed={100}
+									typingSpeed={40}
 									pauseDuration={1500}
 									showCursor={true}
 									cursorCharacter="|"
