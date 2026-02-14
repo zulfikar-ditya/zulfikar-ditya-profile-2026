@@ -1,43 +1,34 @@
-import LightPillar from "@/components/react-bits/LightPillar/LightPillar";
 import SplitText from "@/components/react-bits/SplitText/SplitText";
 import TextType from "@/components/react-bits/TextType/TextType";
 import AboutSection from "@/components/AboutSection";
 import WorkExperienceSection from "@/components/WorkExperienceSection";
 import SocialLinks from "@/components/SocialLinks";
+import FloatingLines from "@/components/FloatingLines";
 
 export default function Home() {
 	return (
 		<main>
 			<SocialLinks />
 			<section id="hero-section" className="h-screen relative overflow-hidden">
-				{/* <LightPillar
-					topColor="#00bba7"
-					bottomColor="#e12afb"
-					intensity={0.4}
-					rotationSpeed={0.5}
-					pillarWidth={5}
-					pillarRotation={25}
-				/> */}
-
-				<LightPillar
-					topColor="#5227FF"
-					bottomColor="#FF9FFC"
-					intensity={1.0}
-					rotationSpeed={0.4}
-					glowAmount={0.005}
-					pillarWidth={3.0}
-					pillarHeight={0.4}
-					noiseIntensity={0.5}
-					pillarRotation={45}
-					interactive={false}
-				/>
+				<div className="absolute inset-0 z-[-99]">
+					<FloatingLines
+						enabledWaves={["top", "middle"]}
+						lineCount={5}
+						lineDistance={5}
+						bendRadius={5}
+						bendStrength={-0.5}
+						interactive={true}
+						parallax={true}
+						animationSpeed={5}
+					/>
+				</div>
 
 				<div className="container mx-auto px-4 min-h-screen">
 					<div className="flex pt-10 items-center justify-center h-screen flex-col">
 						<div className="text-center">
 							<h1 className="text-4xl md:text-8xl font-bold">
 								<SplitText
-									text="Zulfikar Ditya Antariksa."
+									text="Zulfikar Ditya."
 									className=""
 									delay={100}
 									duration={0.6}
@@ -53,7 +44,7 @@ export default function Home() {
 							<h2 className="mt-8 text-md md:text-2xl font-bold">
 								<TextType
 									text={[
-										"Backend Engineer | API Architecture | High-Performance Systems",
+										"Backend Engineer | Laravel, Go, Node.js | Scalable APIs & Performance Optimization",
 									]}
 									typingSpeed={40}
 									pauseDuration={1500}
@@ -64,7 +55,8 @@ export default function Home() {
 
 							<a
 								href="#about-me"
-								className="mt-12 px-6 py-3 bg-white rounded-full text-black font-semibold hover:bg-gray-200 inline-flex items-center gap-2 animate-bounce"
+								aria-label="Scroll down to About Me section"
+								className="mt-12 p-2 bg-white rounded-full text-black font-semibold hover:bg-gray-200 inline-flex items-center gap-2 animate-bounce"
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"

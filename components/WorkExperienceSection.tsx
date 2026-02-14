@@ -14,7 +14,11 @@ export default function WorkExperienceSection() {
 	const experiences: Experience[] = experienceData;
 
 	return (
-		<section id="work-experience" className="py-20 bg-black">
+		<section
+			id="work-experience"
+			aria-label="Work Experience"
+			className="py-20 bg-black"
+		>
 			<div className="container mx-auto px-4">
 				<h2 className="text-5xl font-bold text-center mb-16">
 					Work Experience

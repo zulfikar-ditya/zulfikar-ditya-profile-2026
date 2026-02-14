@@ -1,5 +1,31 @@
 [
 	{
+		"title": "Information Technology Team Lead",
+		"type": "Remote",
+		"company": "Self Employed",
+		"date_start": "December 2025",
+		"date_end": "Present",
+		"skills": [
+			"Team Leadership",
+			"Project Management",
+			"Technical Strategy",
+			"Cross-functional Collaboration",
+			"Mentorship",
+			"Laravel",
+			"Bun",
+			"NextJS",
+			"CI/CD",
+			"Cloud Deployment"
+		],
+		"descriptions": [
+			"Led a team of two web developers in developing a company profile website, coordinating task distribution and ensuring alignment with project scope and timeline",
+			"Designed and implemented comprehensive frontend and backend architecture using Next.js and Bun runtime for optimal performance",
+			"Configured production server infrastructure and implemented CI/CD pipelines to automate build and deployment processes",
+			"Conducted code reviews and established quality standards, delivering stable, high-performance application meeting all client requirements",
+			"Actively developed both frontend and backend components while managing team coordination and project delivery"
+		]
+	},
+	{
 		"title": "Backend developer",
 		"type": "Full-time",
 		"company": "SUPERFUTUREKOMPANY",
@@ -10,7 +36,13 @@
 			"NestJS",
 			"PostgreSQL",
 			"API Integration",
-			"API Development"
+			"API Development",
+			"Authentication & Authorization",
+			"Database Optimization",
+			"Third-party API Integration",
+			"Logging & Monitoring",
+			"CI/CD",
+			"Cloud Deployment"
 		],
 		"descriptions": [
 			"Architected and implemented RESTful APIs using Laravel and NestJS, adhering to industry standards for HTTP methods, status codes, and JSON formatting",

@@ -7,40 +7,48 @@ const skillsData = {
 		"Laravel",
 		"NestJS",
 		"Express",
-		"Elysia",
-		"Hono",
 		"Fastify",
+		"Hono",
+		"Elysia",
 		"Fiber",
 		"Gin",
 	],
-	databases: ["PostgreSQL", "MySQL", "MongoDB"],
+	databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
 	systemArchitecture: [
-		"API Design",
-		"Auth/Authorization",
+		"RESTful API Design",
+		"OAuth & JWT Auth",
 		"Clean Architecture",
-		"Caching Strategy",
+		"DTOs & Validation",
+		"Queue Workers",
 		"Horizontal Scaling",
+		"Caching Strategy",
 	],
 	devops: [
 		"Docker",
+		"Nginx",
 		"GitHub Actions",
 		"GitLab CI/CD",
-		"Versioning",
+		"Server Configuration",
 		"Deployment Pipelines",
 	],
 	monitoring: [
-		"Logging",
-		"Metrics",
+		"Logging & Metrics",
 		"Uptime Monitoring",
 		"Incident Handling",
+		"Query Performance Tuning",
 		"Load Optimization",
 	],
-	frontend: ["React", "Next.js", "Tailwind"],
+	frontend: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+	orm: ["Eloquent", "Drizzle ORM", "Prisma", "BullMQ"],
 };
 
 export default function AboutSection() {
 	return (
-		<section id="about-me" className="container mx-auto px-4 py-20">
+		<section
+			id="about-me"
+			aria-label="About Me"
+			className="container mx-auto px-4 py-20"
+		>
 			<div className="max-w-5xl mx-auto">
 				<h2 className="text-5xl font-bold mb-12 text-center">
 					<SplitText
@@ -60,14 +68,61 @@ export default function AboutSection() {
 
 				<div className="mb-16">
 					<p className="text-xl leading-relaxed text-gray-300">
-						Backend-focused engineer with{" "}
+						Backend Engineer with{" "}
 						<span className="text-[#00bba7] font-semibold">
 							5+ years of experience
 						</span>{" "}
-						building secure APIs, scalable backend services, and
-						high-availability systems using Laravel & NestJS. Strong focus on
-						clean architecture, database optimization, and cloud deployment with
-						proven ability to improve performance and system reliability.
+						building reliable, secure, and high-performance backend systems.
+						Demonstrated expertise in{" "}
+						<span className="text-[#00bba7] font-semibold">
+							clean architecture
+						</span>
+						,{" "}
+						<span className="text-[#00bba7] font-semibold">
+							scalable API design
+						</span>
+						, and efficient data workflows using{" "}
+						<span className="text-[#00bba7] font-semibold">
+							Laravel, Node.js, Bun, pand Go
+						</span>
+						. Proven track record of{" "}
+						<span className="text-[#00bba7] font-semibold">
+							optimizing database performance by 30%
+						</span>
+						,{" "}
+						<span className="text-[#00bba7] font-semibold">
+							reducing production issues by 75%
+						</span>
+						, and maintaining{" "}
+						<span className="text-[#00bba7] font-semibold">
+							99.9% application uptime
+						</span>
+						. Strong foundation in{" "}
+						<span className="text-[#00bba7] font-semibold">
+							PostgreSQL and MySQL optimization
+						</span>
+						,{" "}
+						<span className="text-[#00bba7] font-semibold">
+							Redis caching strategies
+						</span>
+						, and cloud deployment with{" "}
+						<span className="text-[#00bba7] font-semibold">
+							Docker and CI/CD pipelines
+						</span>
+						. Active technical writer with{" "}
+						<span className="text-[#00bba7] font-semibold">
+							30+ published articles
+						</span>{" "}
+						on Medium covering Laravel best practices, API design patterns, and
+						backend optimization techniques, reaching{" "}
+						<span className="text-[#00bba7] font-semibold">190+ followers</span>
+						. Experienced in{" "}
+						<span className="text-[#00bba7] font-semibold">
+							leading development teams
+						</span>{" "}
+						and coordinating full-stack projects from architecture design
+						through production deployment, with proven ability to deliver
+						complex applications on time and within scope.
 					</p>
 				</div>
 
