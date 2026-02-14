@@ -16,7 +16,7 @@ export default function SkillCard({
 			<h3 className="text-2xl font-bold mb-4" style={{ color: accentColor }}>
 				{title}
 			</h3>
-			<div className="flex flex-wrap gap-3">
+			<div className="flex flex-wrap gap-3 text-white">
 				{skills.map((skill) => (
 					<SkillBadge key={skill} skill={skill} />
 				))}

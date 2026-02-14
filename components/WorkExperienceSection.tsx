@@ -20,7 +20,7 @@ export default function WorkExperienceSection() {
 			className="py-20 bg-black"
 		>
 			<div className="container mx-auto px-4">
-				<h2 className="text-5xl font-bold text-center mb-16">
+				<h2 className="text-5xl font-bold text-center mb-16 text-white">
 					Work Experience
 				</h2>
 
@@ -29,11 +29,11 @@ export default function WorkExperienceSection() {
 						<div key={index} className="relative pl-8 pb-12 last:pb-0">
 							{/* Timeline line */}
 							{index !== experiences.length - 1 && (
-								<div className="absolute left-[15px] top-8 bottom-0 w-[2px] bg-gradient-to-b from-[#00bba7] to-[#e12afb]" />
+								<div className="absolute left-[15px] top-8 bottom-0 w-[2px] bg-linear-to-b from-[#00bba7] to-[#e12afb]" />
 							)}
 
 							{/* Timeline dot */}
-							<div className="absolute left-0 top-2 w-8 h-8 rounded-full bg-gradient-to-br from-[#00bba7] to-[#e12afb] flex items-center justify-center">
+							<div className="absolute left-0 top-2 w-8 h-8 rounded-full bg-linear-to-br from-[#00bba7] to-[#e12afb] flex items-center justify-center">
 								<div className="w-3 h-3 rounded-full bg-black" />
 							</div>
 

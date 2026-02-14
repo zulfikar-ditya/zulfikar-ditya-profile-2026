@@ -44,13 +44,9 @@ const skillsData = {
 
 export default function AboutSection() {
 	return (
-		<section
-			id="about-me"
-			aria-label="About Me"
-			className="container mx-auto px-4 py-20"
-		>
-			<div className="max-w-5xl mx-auto">
-				<h2 className="text-5xl font-bold mb-12 text-center">
+		<section id="about-me" aria-label="About Me" className="bg-gray-950">
+			<div className="container mx-auto px-4 py-20 max-w-5xl">
+				<h2 className="text-5xl font-bold mb-12 text-center text-white">
 					<SplitText
 						text="About Me"
 						className=""
