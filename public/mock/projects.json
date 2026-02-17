@@ -1,0 +1,64 @@
+[
+	{
+		"category": "Fexend",
+		"description": "A VSCode theme and admin dashboard template ecosystem",
+		"orgUrl": "https://github.com/fexend",
+		"repos": [
+			{
+				"name": "fexend-blade",
+				"description": "Admin dashboard template built with Laravel Blade and Tailwind CSS",
+				"url": "https://github.com/fexend/fexend-blade",
+				"tags": ["Laravel", "Blade", "Tailwind CSS"]
+			},
+			{
+				"name": "fexend-html",
+				"description": "Static HTML admin dashboard template with Tailwind CSS",
+				"url": "https://github.com/fexend/fexend-html",
+				"tags": ["HTML", "Tailwind CSS"]
+			},
+			{
+				"name": "fexend-theme",
+				"description": "VSCode color theme extension for a clean coding experience",
+				"url": "https://github.com/fexend/fexend-theme",
+				"tags": ["VSCode", "Theme"]
+			}
+		]
+	},
+	{
+		"category": "Clean Starter",
+		"description": "Production-ready boilerplate templates with clean architecture",
+		"orgUrl": "https://github.com/aolus-software",
+		"repos": [
+			{
+				"name": "clean-elysia",
+				"description": "Clean architecture starter with Elysia.js, Drizzle ORM, PostgreSQL, and BullMQ",
+				"url": "https://github.com/aolus-software/clean-elysia",
+				"tags": ["Bun", "Elysia.js", "Drizzle", "PostgreSQL", "BullMQ", "TypeBox"]
+			},
+			{
+				"name": "clean-hono",
+				"description": "Clean architecture starter with Hono, Drizzle ORM, PostgreSQL, and BullMQ",
+				"url": "https://github.com/aolus-software/clean-hono",
+				"tags": ["Bun", "Hono", "Drizzle", "PostgreSQL", "BullMQ", "Zod"]
+			},
+			{
+				"name": "clean-fastify",
+				"description": "Clean architecture starter with Fastify, Drizzle ORM, PostgreSQL, and BullMQ",
+				"url": "https://github.com/aolus-software/clean-fastify",
+				"tags": ["Bun", "Fastify", "Drizzle", "PostgreSQL", "BullMQ", "TypeBox"]
+			},
+			{
+				"name": "clean-nest-prisma-pg",
+				"description": "Clean architecture starter with NestJS, Prisma, and PostgreSQL",
+				"url": "https://github.com/aolus-software/clean-nest-prisma-pg",
+				"tags": ["Bun", "NestJS", "Prisma", "PostgreSQL", "BullMQ"]
+			},
+			{
+				"name": "clean-nest-drizzle-pg",
+				"description": "Clean architecture starter with NestJS, Drizzle ORM, and PostgreSQL",
+				"url": "https://github.com/aolus-software/clean-nest-drizzle-pg",
+				"tags": ["Bun", "NestJS", "Drizzle", "PostgreSQL", "BullMQ"]
+			}
+		]
+	}
+]

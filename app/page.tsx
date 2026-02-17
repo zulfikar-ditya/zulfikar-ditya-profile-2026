@@ -3,6 +3,7 @@ import TextType from "@/components/react-bits/TextType/TextType";
 import AboutSection from "@/components/AboutSection";
 import WorkExperienceSection from "@/components/WorkExperienceSection";
 import BlogSection from "@/components/BlogSection";
+import OpenSourceSection from "@/components/OpenSourceSection";
 import SocialLinks from "@/components/SocialLinks";
 import FloatingLines from "@/components/FloatingLines";
 
@@ -84,6 +85,7 @@ export default function Home() {
 
 			<AboutSection />
 			<WorkExperienceSection />
+			<OpenSourceSection />
 			<BlogSection />
 		</main>
 	);
