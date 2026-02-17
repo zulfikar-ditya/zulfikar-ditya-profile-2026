@@ -1,0 +1,82 @@
+[
+	{
+		"title": "Building a Scalable Queue System in ElysiaJS with BullMQ",
+		"link": "https://medium.com/@zulfikarditya/building-a-scalable-queue-system-in-elysiajs-with-bullmq-610cb715f220",
+		"pubDate": "Sat, 14 Feb 2026 11:01:00 GMT",
+		"categories": ["boilerplate", "nodejs", "queue", "buns", "elysiajs"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*EZEIKRG3U7m_bHW4",
+		"description": "Modern web applications often need to handle tasks that shouldn't block the main request-response cycle — sending emails, processing images, generating reports, or syncing data with third-party APIs."
+	},
+	{
+		"title": "Queues Are Not Optional: Scaling Laravel Without Blocking Requests",
+		"link": "https://medium.com/@zulfikarditya/queues-are-not-optional-scaling-laravel-without-blocking-requests-cb7e3449bc6b",
+		"pubDate": "Sat, 14 Feb 2026 05:01:01 GMT",
+		"categories": ["laravel", "laravel-development", "laravel-framework", "laravel-queue", "queue"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*UEgZi7S1HvuPq73I",
+		"description": "Laravel makes it incredibly easy to build features quickly. But when traffic grows, many Laravel applications start to feel slow, unreliable, or even fragile."
+	},
+	{
+		"title": "PM2 Ecosystem Setup Guide for Node.js/NestJS",
+		"link": "https://medium.com/@zulfikarditya/pm2-ecosystem-setup-guide-for-node-js-nestjs-45b0eee8629a",
+		"pubDate": "Mon, 05 Jan 2026 02:02:34 GMT",
+		"categories": ["pm2", "nodejs", "nestjs", "deployment"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*oXM56y23xizrd7ZP",
+		"description": "PM2 is a production-grade process manager for Node.js applications that provides zero-downtime reloads, monitoring, and clustering capabilities."
+	},
+	{
+		"title": "Building a Stateless Laravel Application on AWS (PHP 8.4 & Laravel 12)",
+		"link": "https://medium.com/@zulfikarditya/building-a-stateless-laravel-application-on-aws-php-8-4-laravel-12-f5f0d27586da",
+		"pubDate": "Fri, 02 Jan 2026 03:19:14 GMT",
+		"categories": ["scalability", "aws", "laravel", "laravel-framework", "laravel-development"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*lGjSlqorJf4TU493",
+		"description": "If your Laravel application runs on a single server, state is simple. Sessions live in files, cache sits in memory, uploads land on disk. Everything works until it doesn't."
+	},
+	{
+		"title": "Laravel Pipeline for Input Sanitization: Safe, Reusable, and Fast",
+		"link": "https://medium.com/@zulfikarditya/laravel-pipeline-for-input-sanitization-safe-reusable-and-fast-484009cc3323",
+		"pubDate": "Fri, 17 Oct 2025 10:50:37 GMT",
+		"categories": ["laravel", "laravel-framework", "laravel-development", "pipeline"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*JsStmVPKNj0srIo9",
+		"description": "A practical guide to what the Laravel Pipeline is, when to use it (and when not), plus a step-by-step build for HTML/script sanitizing user input."
+	},
+	{
+		"title": "Mastering Laravel Nested Controllers",
+		"link": "https://medium.com/@zulfikarditya/mastering-laravel-nested-controllers-c5231a12c007",
+		"pubDate": "Tue, 30 Sep 2025 11:02:15 GMT",
+		"categories": ["laravel-tips-and-tricks", "laravel-controllers", "laravel-development", "laravel-framework", "laravel"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*9yq_JdU3zu3k_I33",
+		"description": "Ever struggled to organize deeply related models in Laravel? A practical guide to structuring nested resources in Laravel for real-world project management apps."
+	},
+	{
+		"title": "Stop Passing Arrays: Laravel DTOs for Third-Party API Payloads",
+		"link": "https://medium.com/@zulfikarditya/stop-passing-arrays-laravel-dtos-for-third-party-api-payloads-60e99e5cc3e2",
+		"pubDate": "Sat, 06 Sep 2025 03:38:35 GMT",
+		"categories": ["laravel-framework", "laravel-development", "laravel"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*cSNnYdAjk-Ewb2pV",
+		"description": "Replace messy associative arrays with typed DTOs in your Laravel service layer. Cut bugs by 60%, improve testability, and ship cleaner API integrations."
+	},
+	{
+		"title": "Complete Laravel VPS Setup Guide — Ubuntu 24.04 LTS",
+		"link": "https://medium.com/@zulfikarditya/complete-laravel-vps-setup-guide-ubuntu-24-04-lts-465f66805b94",
+		"pubDate": "Thu, 31 Jul 2025 11:01:52 GMT",
+		"categories": ["laravel-framework", "deployment", "laravel", "laravel-development"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*z-NNDQT5j0Lj64ef",
+		"description": "This guide will walk you through setting up a fresh Ubuntu 24.04 LTS VPS for deploying Laravel applications with both staging and production environments."
+	},
+	{
+		"title": "Model Attribute Casting in Laravel: Complete Guide to Accessors and Mutators",
+		"link": "https://medium.com/@zulfikarditya/model-attribute-casting-in-laravel-complete-guide-to-accessors-and-mutators-b8e67e8c00df",
+		"pubDate": "Mon, 21 Jul 2025 11:31:51 GMT",
+		"categories": ["laravel", "laravel-tips-and-tricks", "laravel-development", "laravel-eloquent", "laravel-framework"],
+		"thumbnail": "https://cdn-images-1.medium.com/max/1024/0*ro2NOoDVn6_OjROb",
+		"description": "Laravel's Eloquent ORM provides powerful attribute casting capabilities that allow developers to automatically transform model attributes when retrieving or storing data."
+	},
+	{
+		"title": "Building a Modern Developer Portfolio: A Technical Deep Dive",
+		"link": "https://medium.com/@zulfikarditya/building-a-modern-developer-portfolio-a-technical-deep-dive-a95d068b99fd",
+		"pubDate": "Wed, 09 Jul 2025 11:31:31 GMT",
+		"categories": ["nextjs", "portfolio", "typescript", "web-development"],
+		"thumbnail": null,
+		"description": "How I designed and built my personal portfolio website using Next.js, TypeScript, and modern web technologies. This is part of a task for end of semester in my campus."
+	}
+]
