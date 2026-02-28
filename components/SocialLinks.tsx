@@ -52,22 +52,22 @@ export default function SocialLinks() {
 
 	return (
 		<div className="fixed bottom-8 right-8 z-50">
-			<div className="flex flex-col-reverse items-start gap-3">
+			<div className="flex flex-col-reverse items-end gap-2">
 				{isOpen && (
-					<div className="flex flex-col gap-2 animate-in fade-in slide-in-from-bottom-2 duration-300">
+					<div className="flex flex-col gap-1.5 animate-in fade-in slide-in-from-bottom-2 duration-200">
 						{socialLinks.map((link) => (
 							<a
 								key={link.name}
 								href={link.url}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="flex items-center gap-3 px-4 py-2 bg-white text-black rounded-full hover:bg-gray-200 transition-colors shadow-lg"
+								className="flex items-center gap-3 px-4 py-2.5 bg-p-card border border-p-border text-p-muted hover:border-p-accent/50 hover:text-p-accent transition-all duration-200"
 								title={link.name}
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
-									width="20"
-									height="20"
+									width="16"
+									height="16"
 									viewBox="0 0 24 24"
 									fill="none"
 									stroke="currentColor"
@@ -78,7 +78,9 @@ export default function SocialLinks() {
 									<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 									{link.icon}
 								</svg>
-								<span className="font-medium">{link.name}</span>
+								<span className="font-jetbrains text-xs tracking-[0.15em] uppercase">
+									{link.name}
+								</span>
 							</a>
 						))}
 					</div>
@@ -86,25 +88,27 @@ export default function SocialLinks() {
 
 				<button
 					onClick={() => setIsOpen(!isOpen)}
-					className="px-4 py-3 bg-white text-black rounded-full hover:bg-gray-200 transition-colors shadow-lg flex items-center gap-2"
+					className="flex items-center gap-2.5 px-4 py-2.5 bg-p-card border border-p-border text-p-ink hover:border-p-accent/50 hover:text-p-accent transition-all duration-200"
 					aria-label="Toggle social links"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
+						width="16"
+						height="16"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
 						strokeWidth="2"
 						strokeLinecap="round"
 						strokeLinejoin="round"
-						className={`transition-transform ${isOpen ? "rotate-45" : ""}`}
+						className={`transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
 					>
 						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 						<path d="M12 5l0 14 M5 12l14 0" />
 					</svg>
-					<span className="font-semibold">Connect</span>
+					<span className="font-jetbrains text-xs tracking-[0.2em] uppercase">
+						Connect
+					</span>
 				</button>
 			</div>
 		</div>

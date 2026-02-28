@@ -44,12 +44,18 @@ const skillsData = {
 
 export default function AboutSection() {
 	return (
-		<section id="about-me" aria-label="About Me" className="bg-gray-950">
-			<div className="container mx-auto px-4 py-20 max-w-5xl">
-				<h2 className="text-5xl font-bold mb-12 text-center text-white">
+		<section id="about-me" aria-label="About Me" className="bg-p-surface">
+			<div className="container mx-auto px-8 lg:px-16 py-24 max-w-6xl">
+				{/* Section label */}
+				<p className="font-jetbrains text-xs tracking-[0.25em] text-p-accent uppercase mb-4">
+					// 001
+				</p>
+
+				{/* Heading */}
+				<h2 className="font-display text-5xl md:text-7xl font-bold text-p-ink mb-10 leading-tight">
 					<SplitText
 						text="About Me"
-						className=""
+						tag="span"
 						delay={50}
 						duration={0.5}
 						ease="power3.out"
@@ -58,71 +64,64 @@ export default function AboutSection() {
 						to={{ opacity: 1, y: 0 }}
 						threshold={0.1}
 						rootMargin="-50px"
-						textAlign="center"
+						textAlign="left"
 					/>
 				</h2>
 
-				<div className="mb-16">
-					<p className="text-xl leading-relaxed text-gray-300">
-						Backend Engineer with{" "}
-						<span className="text-[#00bba7] font-semibold">
-							5+ years of experience
-						</span>{" "}
-						building reliable, secure, and high-performance backend systems.
-						Demonstrated expertise in{" "}
-						<span className="text-[#00bba7] font-semibold">
-							clean architecture
-						</span>
-						,{" "}
-						<span className="text-[#00bba7] font-semibold">
-							scalable API design
-						</span>
-						, and efficient data workflows using{" "}
-						<span className="text-[#00bba7] font-semibold">
-							Laravel, Node.js, Bun, pand Go
-						</span>
-						. Proven track record of{" "}
-						<span className="text-[#00bba7] font-semibold">
-							optimizing database performance by 30%
-						</span>
-						,{" "}
-						<span className="text-[#00bba7] font-semibold">
-							reducing production issues by 75%
-						</span>
-						, and maintaining{" "}
-						<span className="text-[#00bba7] font-semibold">
-							99.9% application uptime
-						</span>
-						. Strong foundation in{" "}
-						<span className="text-[#00bba7] font-semibold">
-							PostgreSQL and MySQL optimization
-						</span>
-						,{" "}
-						<span className="text-[#00bba7] font-semibold">
-							Redis caching strategies
-						</span>
-						, and cloud deployment with{" "}
-						<span className="text-[#00bba7] font-semibold">
-							Docker and CI/CD pipelines
-						</span>
-						. Active technical writer with{" "}
-						<span className="text-[#00bba7] font-semibold">
-							30+ published articles
-						</span>{" "}
-						on Medium covering Laravel best practices, API design patterns, and
-						backend optimization techniques, reaching{" "}
-						<span className="text-[#00bba7] font-semibold">190+ followers</span>
-						. Experienced in{" "}
-						<span className="text-[#00bba7] font-semibold">
-							leading development teams
-						</span>{" "}
-						and coordinating full-stack projects from architecture design
-						through production deployment, with proven ability to deliver
-						complex applications on time and within scope.
-					</p>
-				</div>
+				{/* Divider */}
+				<div className="w-full h-px bg-p-border mb-14" />
 
-				<div className="grid md:grid-cols-2 gap-8">
+				{/* Bio */}
+				<p className="text-lg md:text-xl leading-relaxed text-p-muted mb-16 max-w-4xl">
+					Backend Engineer with{" "}
+					<span className="text-p-accent font-semibold">
+						5+ years of experience
+					</span>{" "}
+					building reliable, secure, and high-performance backend systems.
+					Demonstrated expertise in{" "}
+					<span className="text-p-accent font-semibold">clean architecture</span>
+					,{" "}
+					<span className="text-p-accent font-semibold">
+						scalable API design
+					</span>
+					, and efficient data workflows using{" "}
+					<span className="text-p-accent font-semibold">
+						Laravel, Node.js, Bun, and Go
+					</span>
+					. Proven track record of{" "}
+					<span className="text-p-accent font-semibold">
+						optimizing database performance by 30%
+					</span>
+					,{" "}
+					<span className="text-p-accent font-semibold">
+						reducing production issues by 75%
+					</span>
+					, and maintaining{" "}
+					<span className="text-p-accent font-semibold">
+						99.9% application uptime
+					</span>
+					. Strong foundation in{" "}
+					<span className="text-p-accent font-semibold">
+						PostgreSQL and MySQL optimization
+					</span>
+					,{" "}
+					<span className="text-p-accent font-semibold">
+						Redis caching strategies
+					</span>
+					, and cloud deployment with{" "}
+					<span className="text-p-accent font-semibold">
+						Docker and CI/CD pipelines
+					</span>
+					. Active technical writer with{" "}
+					<span className="text-p-accent font-semibold">
+						30+ published articles
+					</span>{" "}
+					on Medium reaching{" "}
+					<span className="text-p-accent font-semibold">190+ followers</span>.
+				</p>
+
+				{/* Skills grid */}
+				<div className="grid md:grid-cols-2 gap-3">
 					<SkillCard title="Languages" skills={skillsData.languages} />
 					<SkillCard
 						title="Backend Frameworks"
@@ -140,11 +139,11 @@ export default function AboutSection() {
 					/>
 				</div>
 
-				<div className="mt-8">
+				<div className="mt-3">
 					<SkillCard
 						title="Frontend (Support Level)"
 						skills={skillsData.frontend}
-						accentColor="#e12afb"
+						accentColor="#9d7fff"
 					/>
 				</div>
 			</div>

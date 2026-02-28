@@ -6,79 +6,91 @@ import BlogSection from "@/components/BlogSection";
 import OpenSourceSection from "@/components/OpenSourceSection";
 import SocialLinks from "@/components/SocialLinks";
 import FloatingLines from "@/components/FloatingLines";
+import HeroProfileCard from "@/components/HeroProfileCard";
 
 export default function Home() {
 	return (
 		<main>
 			<SocialLinks />
-			<section id="hero-section" className="h-screen relative overflow-hidden">
+			<section
+				id="hero-section"
+				className="h-screen relative overflow-hidden bg-p-base"
+			>
+				{/* Animated background */}
 				<div className="absolute inset-0 z-[-99]">
 					<FloatingLines
+						linesGradient={["#c4ff00", "#00cc66"]}
 						enabledWaves={["top", "middle"]}
-						lineCount={5}
-						lineDistance={5}
-						bendRadius={5}
+						lineCount={4}
+						lineDistance={6}
+						bendRadius={4}
 						bendStrength={-0.5}
 						interactive={true}
 						parallax={true}
-						animationSpeed={5}
+						animationSpeed={4}
 					/>
 				</div>
 
-				<div className="container mx-auto px-4 min-h-screen">
-					<div className="flex pt-10 items-center justify-center h-screen flex-col text-white">
-						<div className="text-center">
-							<h1 className="text-4xl md:text-8xl font-bold">
-								<SplitText
-									text="Zulfikar Ditya."
-									className=""
-									delay={100}
-									duration={0.6}
-									ease="power3.out"
-									splitType="chars"
-									from={{ opacity: 0, y: 40 }}
-									to={{ opacity: 1, y: 0 }}
-									threshold={0.1}
-									rootMargin="-100px"
-									textAlign="center"
-								/>
-							</h1>
-							<h2 className="mt-8 text-md md:text-2xl font-bold text-white">
+				<div className="container mx-auto px-8 lg:px-16 min-h-screen flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+					{/* Left: text content */}
+					<div className="flex-1 flex flex-col justify-center pt-16 lg:pt-0">
+						{/* Technical section label */}
+						<p className="font-jetbrains text-xs tracking-[0.25em] text-p-accent uppercase mb-8 opacity-90">
+							// 000 — portfolio
+						</p>
+
+						{/* Name */}
+						<h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[5.5rem] xl:text-[7rem] font-bold leading-[0.92] text-p-ink mb-8">
+							<SplitText
+								text="Zulfikar Ditya."
+								tag="span"
+								className="font-display font-bold"
+								delay={70}
+								duration={0.7}
+								ease="power4.out"
+								splitType="chars"
+								from={{ opacity: 0, y: 60 }}
+								to={{ opacity: 1, y: 0 }}
+								threshold={0.1}
+								rootMargin="-80px"
+								textAlign="left"
+							/>
+						</h1>
+
+						{/* Role — terminal prompt style */}
+						<div className="flex items-center gap-3 mb-14">
+							<span className="font-jetbrains text-p-accent text-lg select-none leading-none">
+								›
+							</span>
+							<h2 className="font-jetbrains text-sm md:text-base text-p-muted">
 								<TextType
 									text={[
-										"Backend Engineer | Laravel, Go, Node.js | Scalable APIs & Performance Optimization",
+										"Backend Engineer — Laravel, Go, Node.js — Scalable APIs & Performance Optimization",
 									]}
-									typingSpeed={40}
-									pauseDuration={1500}
+									typingSpeed={32}
+									pauseDuration={2500}
 									showCursor={true}
-									cursorCharacter="|"
+									cursorCharacter="▊"
 								/>
 							</h2>
+						</div>
 
+						{/* Scroll CTA */}
+						<div className="flex items-center gap-4">
+							<div className="w-8 h-px bg-p-accent" />
 							<a
 								href="#about-me"
-								aria-label="Scroll down to About Me section"
-								className="mt-12 p-2 bg-white rounded-full text-black font-semibold hover:bg-gray-200 inline-flex items-center gap-2 animate-bounce"
+								aria-label="Scroll to About Me"
+								className="font-jetbrains text-xs tracking-[0.25em] text-p-muted hover:text-p-accent transition-colors duration-200 uppercase"
 							>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="24"
-									height="24"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									strokeWidth="2"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									className="icon icon-tabler icons-tabler-outline icon-tabler-arrow-down-dashed"
-								>
-									<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-									<path d="M12 5v.5m0 3v1.5m0 3v6" />
-									<path d="M18 13l-6 6" />
-									<path d="M6 13l6 6" />
-								</svg>
+								scroll
 							</a>
 						</div>
+					</div>
+
+					{/* Right: ProfileCard — desktop only */}
+					<div className="hidden lg:flex items-center justify-center shrink-0 py-12">
+						<HeroProfileCard />
 					</div>
 				</div>
 			</section>

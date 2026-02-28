@@ -9,14 +9,17 @@ interface SkillCardProps {
 export default function SkillCard({
 	title,
 	skills,
-	accentColor = "#00bba7",
+	accentColor = "#c4ff00",
 }: SkillCardProps) {
 	return (
-		<div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-all">
-			<h3 className="text-2xl font-bold mb-4" style={{ color: accentColor }}>
+		<div className="p-6 bg-p-card border border-p-border hover:border-p-border-bright transition-all duration-300">
+			<p
+				className="text-xs tracking-[0.25em] uppercase mb-5 font-jetbrains font-medium"
+				style={{ color: accentColor }}
+			>
 				{title}
-			</h3>
-			<div className="flex flex-wrap gap-3 text-white">
+			</p>
+			<div className="flex flex-wrap gap-2">
 				{skills.map((skill) => (
 					<SkillBadge key={skill} skill={skill} />
 				))}
