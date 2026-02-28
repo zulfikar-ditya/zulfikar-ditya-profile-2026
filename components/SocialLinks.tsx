@@ -51,8 +51,8 @@ export default function SocialLinks() {
 	];
 
 	return (
-		<div className="fixed bottom-8 right-8 z-50">
-			<div className="flex flex-col-reverse items-end gap-2">
+		<div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50 w-36 sm:w-40">
+			<div className="flex flex-col-reverse gap-2">
 				{isOpen && (
 					<div className="flex flex-col gap-1.5 animate-in fade-in slide-in-from-bottom-2 duration-200">
 						{socialLinks.map((link) => (

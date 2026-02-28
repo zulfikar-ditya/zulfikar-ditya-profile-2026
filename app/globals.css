@@ -102,6 +102,7 @@ html {
 	body {
 		background-color: #060610;
 		color: #dddad4;
+		overflow-x: hidden;
 	}
 }
 

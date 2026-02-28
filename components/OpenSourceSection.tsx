@@ -43,12 +43,14 @@ export default function OpenSourceSection() {
 					{projects.map((group) => (
 						<div key={group.category}>
 							{/* Category header */}
-							<div className="flex items-baseline gap-4 mb-6">
-								<h3 className="font-display text-xl font-bold text-p-accent">
-									{group.category}
-								</h3>
-								<div className="flex-1 h-px bg-p-border" />
-								<p className="font-jetbrains text-xs text-p-muted tracking-wide shrink-0">
+							<div className="mb-6">
+								<div className="flex items-center gap-4">
+									<h3 className="font-display text-xl font-bold text-p-accent shrink-0">
+										{group.category}
+									</h3>
+									<div className="flex-1 h-px bg-p-border" />
+								</div>
+								<p className="font-jetbrains text-xs text-p-muted tracking-wide mt-1.5">
 									{group.description}
 								</p>
 							</div>
