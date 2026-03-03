@@ -5,7 +5,7 @@ import WorkExperienceSection from "@/components/WorkExperienceSection";
 import BlogSection from "@/components/BlogSection";
 import OpenSourceSection from "@/components/OpenSourceSection";
 import SocialLinks from "@/components/SocialLinks";
-import FloatingLines from "@/components/FloatingLines";
+import Galaxy from "@/components/react-bits/Galaxy/Galaxy";
 import HeroProfileCard from "@/components/HeroProfileCard";
 
 export default function Home() {
@@ -17,21 +17,16 @@ export default function Home() {
 				className="h-screen relative overflow-hidden bg-p-base"
 			>
 				{/* Animated background */}
-				<div className="absolute inset-0 z-[-99]">
-					<FloatingLines
-						linesGradient={["#c4ff00", "#00cc66"]}
-						enabledWaves={["top", "middle"]}
-						lineCount={4}
-						lineDistance={6}
-						bendRadius={4}
-						bendStrength={-0.5}
-						interactive={true}
-						parallax={true}
-						animationSpeed={4}
+				<div className="absolute inset-0 z-0">
+					<Galaxy
+						starSpeed={1}
+						mouseInteraction={false}
+						density={0.5}
+						saturation={0.8}
 					/>
 				</div>
 
-				<div className="container mx-auto px-8 lg:px-16 min-h-screen flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+				<div className="relative z-10 container mx-auto px-8 lg:px-16 min-h-screen flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 					{/* Left: text content */}
 					<div className="flex-1 flex flex-col justify-center pt-16 lg:pt-0">
 						{/* Technical section label */}
