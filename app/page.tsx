@@ -17,7 +17,7 @@ export default function Home() {
 				className="h-screen relative overflow-hidden bg-p-base"
 			>
 				{/* Animated background */}
-				<div className="absolute inset-0 z-[-99]">
+				<div className="absolute inset-0 z-0">
 					<Galaxy
 						starSpeed={1.5}
 						mouseInteraction={false}
@@ -26,7 +26,7 @@ export default function Home() {
 					/>
 				</div>
 
-				<div className="container mx-auto px-8 lg:px-16 min-h-screen flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+				<div className="relative z-10 container mx-auto px-8 lg:px-16 min-h-screen flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 					{/* Left: text content */}
 					<div className="flex-1 flex flex-col justify-center pt-16 lg:pt-0">
 						{/* Technical section label */}
