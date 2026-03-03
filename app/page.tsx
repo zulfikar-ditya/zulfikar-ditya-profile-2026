@@ -19,9 +19,9 @@ export default function Home() {
 				{/* Animated background */}
 				<div className="absolute inset-0 z-0">
 					<Galaxy
-						starSpeed={1.5}
+						starSpeed={1}
 						mouseInteraction={false}
-						density={1.9}
+						density={0.5}
 						saturation={0.8}
 					/>
 				</div>
