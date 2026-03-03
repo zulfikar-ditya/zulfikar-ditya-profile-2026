@@ -3,3 +3,4 @@ export * from "./TextType/TextType";
 export * from "./ProfileCard/ProfileCard";
 export * from "./SplitText/SplitText";
 export * from "./SpotlightCard/SpotlightCard";
+export { default as Galaxy } from "./Galaxy/Galaxy";

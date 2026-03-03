@@ -5,7 +5,7 @@ import WorkExperienceSection from "@/components/WorkExperienceSection";
 import BlogSection from "@/components/BlogSection";
 import OpenSourceSection from "@/components/OpenSourceSection";
 import SocialLinks from "@/components/SocialLinks";
-import FloatingLines from "@/components/FloatingLines";
+import Galaxy from "@/components/react-bits/Galaxy/Galaxy";
 import HeroProfileCard from "@/components/HeroProfileCard";
 
 export default function Home() {
@@ -18,16 +18,11 @@ export default function Home() {
 			>
 				{/* Animated background */}
 				<div className="absolute inset-0 z-[-99]">
-					<FloatingLines
-						linesGradient={["#c4ff00", "#00cc66"]}
-						enabledWaves={["top", "middle"]}
-						lineCount={4}
-						lineDistance={6}
-						bendRadius={4}
-						bendStrength={-0.5}
-						interactive={true}
-						parallax={true}
-						animationSpeed={4}
+					<Galaxy
+						starSpeed={1.5}
+						mouseInteraction={false}
+						density={1.9}
+						saturation={0.8}
 					/>
 				</div>
 
