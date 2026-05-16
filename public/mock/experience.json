@@ -19,11 +19,18 @@
 			"Cloud Deployment"
 		],
 		"descriptions": [
-			"Architected and implemented RESTful APIs using Laravel and NestJS, adhering to industry standards for HTTP methods, status codes, and JSON formatting",
-			"Engineered robust authentication and authorization systems, enhancing application security across multiple project",
-			"Optimized database performance through efficient schema design and strategic indexing, resulting in 30% faster query execution.",
-			"Integrated multiple third-party APIs (Microsoft, WhatsApp, Google) using Laravel's HTTP clients with comprehensive error handling and retry mechanism",
-			"Established and maintained comprehensive logging and monitoring systems, ensuring 99.9% application uptime"
+			"Architected and implemented RESTful APIs across multiple products using Laravel and NestJS, following industry standards for HTTP methods, status codes, and JSON formatting",
+			"Built role based authentication and authorization systems hardening security across several internal and client facing applications",
+			"Optimized database performance through schema design and strategic indexing, resulting in 30% faster query execution",
+			"Integrated third party APIs (Microsoft, WhatsApp, Google) with comprehensive error handling and retry mechanisms",
+			"Implemented Redis caching and queue workers for background job processing, significantly reducing response times on heavy endpoints",
+			"Established logging and monitoring across services, maintaining 99.9% application uptime through proactive incident handling",
+			"Delivered backend services for a campaign and promotion platform supporting large enterprise marketing programs",
+			"Built a receipt parsing engine powering a customer loyalty product, including parsing pipelines, validation, and points issuance workflows",
+			"Developed conversational bot services on top of the WhatsApp Business API for automated customer interactions",
+			"Engineered a multi tenant WhatsApp business messaging platform (channel and inbox style) supporting team based agent workflows",
+			"Implemented internationalization (i18n) across backend services and APIs to support multi language product rollouts",
+			"Built backend infrastructure for an AI platform management system, including model orchestration, usage tracking, and access control"
 		]
 	},
 	{
