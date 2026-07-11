@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Non-app scaffolding (agent/skill config, not app code):
+    ".agents/**",
+    ".claude/**",
   ]),
 ]);
 

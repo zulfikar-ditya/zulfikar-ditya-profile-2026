@@ -26,6 +26,8 @@ export function pageMetadata({ title, description, path }: PageMetadataInput): M
 			url,
 			type: "website",
 			siteName: site.name,
+			images: ["/og-image.png"],
+			locale: "en_US",
 		},
 	};
 }

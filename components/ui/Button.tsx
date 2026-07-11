@@ -13,10 +13,14 @@ type Props = {
 	href?: string;
 	className?: string;
 	children: React.ReactNode;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export function Button({ variant = "primary", href, className, children, ...rest }: Props) {
 	const cls = cn(base, variants[variant], className);
-	if (href) return <Link href={href} className={cls}>{children}</Link>;
-	return <button className={cls} {...rest}>{children}</button>;
+	if (href) return <Link href={href} className={cls} {...rest}>{children}</Link>;
+	return (
+		<button className={cls} {...(rest as unknown as React.ButtonHTMLAttributes<HTMLButtonElement>)}>
+			{children}
+		</button>
+	);
 }

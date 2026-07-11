@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = "https://zulfikarditya.com";
+	const baseUrl = site.url;
 	const lastModified = new Date();
 
 	return [

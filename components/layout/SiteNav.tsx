@@ -32,7 +32,7 @@ export function SiteNav() {
 				</div>
 				<div className="flex items-center gap-2 md:hidden">
 					<ThemeToggle />
-					<button aria-label="Menu" onClick={() => setOpen(!open)}
+					<button aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}
 						className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border">
 						{open ? <X size={18} /> : <Menu size={18} />}
 					</button>
@@ -43,7 +43,8 @@ export function SiteNav() {
 					<div className="flex flex-col gap-3">
 						{[...site.nav, { href: "/resume", label: "Resume" }].map((n) => (
 							<Link key={n.href} href={n.href} onClick={() => setOpen(false)}
-								className="text-sm text-muted-fg hover:text-foreground">{n.label}</Link>
+								className={cn("text-sm text-muted-fg hover:text-foreground",
+									isActive(n.href) && "text-foreground")}>{n.label}</Link>
 						))}
 					</div>
 				</div>
