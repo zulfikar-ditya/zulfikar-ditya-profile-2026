@@ -65,3 +65,15 @@ body {
 		scroll-behavior: auto !important;
 	}
 }
+
+@media print {
+	header,
+	footer {
+		display: none !important;
+	}
+
+	body {
+		background: #fff;
+		color: #000;
+	}
+}
