@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
+import { ThemeScript } from "@/components/theme/ThemeScript";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { SiteNav } from "@/components/layout/SiteNav";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const sora = Sora({
@@ -162,6 +166,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
+				<ThemeScript />
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
@@ -176,7 +181,11 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className={`${inter.variable} ${sora.variable} antialiased`}>
-				{children}
+				<ThemeProvider>
+					<SiteNav />
+					<main className="min-h-screen">{children}</main>
+					<SiteFooter />
+				</ThemeProvider>
 			</body>
 		</html>
 	);
