@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import { ArrowUpRight } from "lucide-react";
 import { site } from "@/data/site";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+	title: "Contact",
+	description:
+		"Open to backend and full-stack roles, freelance work, and collaboration. Reach out by email or find me on GitHub, LinkedIn, and Medium.",
+	path: "/contact",
+});
 
 export default function ContactPage() {
 	return (

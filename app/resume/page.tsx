@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import { Download } from "lucide-react";
 import { site } from "@/data/site";
 import { ResumeDocument } from "@/components/resume/ResumeDocument";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+	title: "Resume",
+	description:
+		"Zulfikar Ditya's resume — backend engineering experience, skills, and roles in Laravel, Go, and Node.js.",
+	path: "/resume",
+});
 
 export default function ResumePage() {
 	return (

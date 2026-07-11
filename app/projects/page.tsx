@@ -1,11 +1,48 @@
+import type { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
+import { site } from "@/data/site";
+import { pageMetadata, breadcrumbJsonLd, collectionJsonLd } from "@/lib/seo";
+
+const description = "Boilerplates and tools I maintain for cleaner, faster backend work.";
+
+export const metadata: Metadata = pageMetadata({
+	title: "Open Source Projects",
+	description,
+	path: "/projects",
+});
 
 export default function ProjectsPage() {
+	const breadcrumb = breadcrumbJsonLd([
+		{ name: "Home", url: site.url },
+		{ name: "Open Source Projects", url: `${site.url}/projects` },
+	]);
+
+	const collection = collectionJsonLd({
+		name: "Open Source Projects",
+		description,
+		url: `${site.url}/projects`,
+		items: projects.flatMap((group) =>
+			group.repos.map((repo) => ({
+				name: repo.name,
+				url: repo.url,
+				description: repo.description,
+			})),
+		),
+	});
+
 	return (
 		<div className="mx-auto max-w-5xl px-6 py-16">
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(collection) }}
+			/>
 			<SectionHeader eyebrow="Open source" title="Things I've built and shared"
 				intro="Boilerplates and tools I maintain for cleaner, faster backend work." />
 			<div className="space-y-12">
