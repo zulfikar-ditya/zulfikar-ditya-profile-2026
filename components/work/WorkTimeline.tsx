@@ -17,7 +17,7 @@ export function WorkTimeline() {
 								{e.descriptions.map((d, j) => <li key={j}>{d}</li>)}
 							</ul>
 							<div className="mt-4 flex flex-wrap gap-1.5">
-								{e.skills.map((s) => <Badge key={s}>{s}</Badge>)}
+								{e.skills.map((s, k) => <Badge key={`${s}-${k}`}>{s}</Badge>)}
 							</div>
 						</div>
 					</Reveal>
