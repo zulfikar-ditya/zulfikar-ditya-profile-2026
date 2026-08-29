@@ -1,6 +1,6 @@
 [
 	{
-		"title": "Backend developer",
+		"title": "Backend Engineer & AI Engineer Assistant",
 		"type": "Full-time",
 		"company": "SUPERFUTUREKOMPANY",
 		"date_start": "September 2024",
@@ -9,33 +9,58 @@
 			"Laravel",
 			"NestJS",
 			"PostgreSQL",
-			"API Integration",
+			"RAG Pipelines",
+			"Embeddings",
+			"pgvector",
+			"Qdrant",
+			"Prompt Engineering",
+			"LLM Guardrails",
+			"OpenAI",
+			"Anthropic",
+			"OpenRouter",
 			"API Development",
 			"Authentication & Authorization",
 			"Database Optimization",
-			"Third-party API Integration",
+			"Redis",
+			"Queue Workers",
 			"Logging & Monitoring",
-			"CI/CD",
-			"Cloud Deployment"
+			"CI/CD"
 		],
-		"descriptions": [
-			"Architected and implemented RESTful APIs across multiple products using Laravel and NestJS, following industry standards for HTTP methods, status codes, and JSON formatting",
-			"Built role based authentication and authorization systems hardening security across several internal and client facing applications",
-			"Optimized database performance through schema design and strategic indexing, resulting in 30% faster query execution",
-			"Integrated third party APIs (Microsoft, WhatsApp, Google) with comprehensive error handling and retry mechanisms",
-			"Implemented Redis caching and queue workers for background job processing, significantly reducing response times on heavy endpoints",
-			"Established logging and monitoring across services, maintaining 99.9% application uptime through proactive incident handling",
-			"Delivered backend services for a campaign and promotion platform supporting large enterprise marketing programs",
-			"Built a receipt parsing engine powering a customer loyalty product, including parsing pipelines, validation, and points issuance workflows",
-			"Developed conversational bot services on top of the WhatsApp Business API for automated customer interactions",
-			"Engineered a multi tenant WhatsApp business messaging platform (channel and inbox style) supporting team based agent workflows",
-			"Implemented internationalization (i18n) across backend services and APIs to support multi language product rollouts",
-			"Built backend infrastructure for an AI platform management system, including model orchestration, usage tracking, and access control"
+		"note": "Promoted to AI Engineer Assistant in July 2026 while retaining backend ownership.",
+		"groups": [
+			{
+				"label": "AI Engineering",
+				"descriptions": [
+					"Built retrieval augmented generation pipelines end to end, covering chunking strategy, embedding generation, vector storage and retrieval on pgvector and Qdrant, and context assembly for production LLM features",
+					"Designed, versioned, and iterated system prompts and prompt templates, validating behaviour against real user input rather than curated examples",
+					"Implemented guardrails across the request path including input validation, output filtering, and prompt injection mitigation, with defined fallback behaviour when a model response cannot be trusted",
+					"Integrated OpenAI, Anthropic, and OpenRouter models (DeepSeek, Qwen) with retries, timeouts, provider fallback routing, structured logging, and usage tracking",
+					"Delivered an AI assistant for enterprise feedback management, handling ingestion, semantic retrieval, and structured summarization across large volumes of customer feedback",
+					"Moved long running inference onto queue workers to keep latency sensitive endpoints off the model call path"
+				]
+			},
+			{
+				"label": "Backend Engineering",
+				"descriptions": [
+					"Architected and implemented RESTful APIs across multiple products using Laravel and NestJS, following industry standards for HTTP methods, status codes, and JSON formatting",
+					"Built role based authentication and authorization systems hardening security across several internal and client facing applications",
+					"Optimized database performance through schema design and strategic indexing, resulting in 30% faster query execution",
+					"Integrated third party APIs (Microsoft, WhatsApp, Google) with comprehensive error handling and retry mechanisms",
+					"Implemented Redis caching and queue workers for background job processing, significantly reducing response times on heavy endpoints",
+					"Established logging and monitoring across services, maintaining 99.9% application uptime through proactive incident handling",
+					"Delivered backend services for a campaign and promotion platform supporting large enterprise marketing programs",
+					"Built a receipt parsing engine powering a customer loyalty product, including parsing pipelines, validation, and points issuance workflows",
+					"Developed conversational bot services on top of the WhatsApp Business API for automated customer interactions",
+					"Engineered a multi tenant WhatsApp business messaging platform (channel and inbox style) supporting team based agent workflows",
+					"Implemented internationalization (i18n) across backend services and APIs to support multi language product rollouts",
+					"Built backend infrastructure for an AI platform management system, including model orchestration, usage tracking, and access control"
+				]
+			}
 		]
 	},
 	{
 		"title": "Information Technology Team Lead",
-		"type": "Remote",
+		"type": "Freelance, Remote",
 		"company": "Self Employed",
 		"date_start": "December 2025",
 		"date_end": "April 2026",
@@ -45,18 +70,17 @@
 			"Technical Strategy",
 			"Cross-functional Collaboration",
 			"Mentorship",
-			"Laravel",
+			"Next.js",
 			"Bun",
-			"NextJS",
 			"CI/CD",
 			"Cloud Deployment"
 		],
 		"descriptions": [
-			"Led a team of two web developers in developing a company profile website, coordinating task distribution and ensuring alignment with project scope and timeline",
-			"Designed and implemented comprehensive frontend and backend architecture using Next.js and Bun runtime for optimal performance",
-			"Configured production server infrastructure and implemented CI/CD pipelines to automate build and deployment processes",
-			"Conducted code reviews and established quality standards, delivering stable, high-performance application meeting all client requirements",
-			"Actively developed both frontend and backend components while managing team coordination and project delivery"
+			"Led a team of two web developers on a company profile website, coordinating task distribution and ensuring delivery against scope and timeline",
+			"Designed end to end frontend and backend architecture using Next.js and Bun runtime",
+			"Configured production server infrastructure and CI/CD pipelines to automate build and deployment",
+			"Ran code reviews and established quality standards, delivering a stable, high performance application meeting all client requirements",
+			"Contributed hands on to frontend and backend implementation alongside coordinating the team"
 		]
 	},
 	{
@@ -67,23 +91,8 @@
 		"date_end": "September 2024",
 		"skills": ["Mendix", "Low-code Development", "PostgreSQL"],
 		"descriptions": [
-			"Delivered custom Mendix applications for PT KAI Indonesia, focusing on rapid low-code development to meet critical business requirements",
-			"Collaborated with cross-functional teams to translate complex business logic into functional applications within tight deadlines"
-		]
-	},
-	{
-		"title": "Application Developer Officer",
-		"type": "Full-time",
-		"company": "PT Anomali Trans Teknologi",
-		"date_start": "June 2023",
-		"date_end": "September 2024",
-		"skills": ["Laravel", "MySql", "PostgreSQL", "Mendix", "ASP.NET"],
-		"descriptions": [
-			"Designed and optimized PostgreSQL database schemas supporting high-volume web applications",
-			"Developed and maintained full-stack web applications using Laravel's MVC architecture with focus on data integrity and security",
-			"Implemented Eloquent ORM for efficient data interactions, reducing code complexity by 25",
-			"Expanded technical versatility by learning and implementing solutions using Mendix low-code platform and ASP.NET",
-			"Facilitated seamless collaboration between design and product teams, ensuring alignment of technical implementations with user requirements"
+			"Delivered a custom Mendix application for PT KAI Indonesia, focusing on rapid low code delivery against critical business deadlines",
+			"Collaborated with cross functional teams to translate complex business logic into functional flows within tight delivery windows"
 		]
 	},
 	{
@@ -103,18 +112,33 @@
 			"Database Architecture"
 		],
 		"descriptions": [
-			"Engaged closely with clients to understand their goals, target audience, and desired functionalities, documenting all requirements and defining the project scope",
-			"Designed wireframes and prototypes with iterative client feedback",
-			"Leveraged an RDBMS like MySQL, applying database normalization and creating ERDs for clear table relationships",
-			"Developed using Laravel's MVC architecture, utilizing Eloquent for database interactions, Composer for dependency management, and Pest for unit testing",
-			"Implemented Git for version control and relied on project management tools like Trello and Notion to track tasks and milestones, adopting Agile methodologies",
-			"Ensured smooth deployment by setting up development, staging, and production environments and incorporating CI/CD pipelines for automated testing and deployment"
+			"Worked directly with clients to define scope, target users, and required functionality, documenting requirements end to end",
+			"Designed wireframes and prototypes iteratively with client feedback",
+			"Modeled relational data using MySQL with proper normalization and ERDs for clear table relationships",
+			"Built applications using Laravel MVC with Eloquent, Composer, and Pest for unit testing",
+			"Used Git for version control and Trello / Notion for Agile task tracking",
+			"Set up development, staging, and production environments with CI/CD pipelines for automated testing and deployment"
 		]
 	},
 	{
-		"title": "Backend developer",
+		"title": "Application Developer Officer",
+		"type": "Full-time",
+		"company": "PT Anomali Trans Teknologi",
+		"date_start": "June 2023",
+		"date_end": "September 2024",
+		"skills": ["Laravel", "MySQL", "PostgreSQL", "Mendix", "ASP.NET"],
+		"descriptions": [
+			"Designed and optimized PostgreSQL schemas supporting high volume web applications with complex business logic",
+			"Built and maintained full stack web applications using Laravel MVC with focus on data integrity and security",
+			"Implemented Eloquent ORM for efficient data interactions, reducing code complexity by 25% through proper relationship management",
+			"Expanded technical coverage by delivering solutions on Mendix low code platform and ASP.NET",
+			"Facilitated alignment between design and product teams to keep technical implementation in step with user requirements"
+		]
+	},
+	{
+		"title": "Backend Developer",
 		"type": "Freelance",
-		"company": "PT SEJE DIGITAL UTAMA",
+		"company": "PT SEJE Digital Utama",
 		"date_start": "October 2023",
 		"date_end": "May 2024",
 		"skills": [
@@ -125,10 +149,10 @@
 			"API Integration"
 		],
 		"descriptions": [
-			"Engineered secure and optimized APIs for data exchange between web applications and external services including Hue Huy & Aku Hadir API",
-			"Implemented comprehensive security measures including data validation, sanitization, and encryption to protect against common vulnerabilities",
-			"Created detailed API documentation and versioning protocols, ensuring smooth integration for front-end teams and third-party consumers",
-			"Collaborated with front-end developers to design intuitive API endpoints, reducing implementation time by 40%"
+			"Engineered secure and optimized APIs for data exchange between web applications and external services (Hue Huy, Aku Hadir)",
+			"Implemented data validation, sanitization, and encryption to protect against common web vulnerabilities",
+			"Authored detailed API documentation and versioning protocols, enabling smooth frontend and third party integration",
+			"Designed intuitive endpoint contracts with frontend teams, reducing integration time by 40%"
 		]
 	},
 	{
@@ -142,12 +166,11 @@
 			"ERP Development",
 			"Multi-currency Systems",
 			"Database Architecture",
-			"ERP Development",
 			"Debugging"
 		],
 		"descriptions": [
-			"Built custom ERP web applications handling multi-currency transactions with 100% accuracy in financial data management.",
-			"Architected efficient database structures supporting complex business logic for enterprise client.",
+			"Built custom ERP applications handling multi currency transactions with 100% accuracy on financial data",
+			"Architected efficient database structures supporting complex enterprise business logic",
 			"Resolved critical system issues through advanced debugging and code analysis, reducing system downtime by 50%"
 		]
 	},
@@ -159,22 +182,22 @@
 		"date_end": "June 2023",
 		"skills": [
 			"Laravel",
+			"ERP Systems",
 			"Financial Systems",
-			"Hr Management Systems",
-			"Warehouse Management Systems",
-			"ERP Systems"
+			"HR Management Systems",
+			"Warehouse Management Systems"
 		],
 		"descriptions": [
-			"Served as core developer for custom ERP web applications, designing scalable architectures for enterprise clientu",
-			"Implemented comprehensive ERP modules including Purchase, Sales, Delivery, Invoice, Warehouse, Master Data, Finance, and Hc",
-			"Mentored junior developers on complex algorithms and Laravel best practices, improving team productivity by 35",
-			"Led code reviews ensuring high-quality, maintainable code through rigorous standards and best practices"
+			"Core developer on custom ERP web applications, designing scalable architectures for enterprise clients",
+			"Implemented ERP modules across Purchase, Sales, Delivery, Invoice, Warehouse, Master Data, Finance, and HR",
+			"Mentored junior developers on complex algorithms and Laravel best practices, improving team productivity by 35%",
+			"Led code reviews enforcing high quality, maintainable code through rigorous standards"
 		]
 	},
 	{
-		"title": "Backend developer",
+		"title": "Backend Developer",
 		"type": "Full-time",
-		"company": "SEJE DIGITAL",
+		"company": "SEJE Digital",
 		"date_start": "March 2022",
 		"date_end": "August 2022",
 		"skills": [
@@ -185,13 +208,13 @@
 			"Third-party APIs"
 		],
 		"descriptions": [
-			"Conducted thorough quality assurance and testing, reducing production issues by 75%",
-			"Integrated multiple third-party APIs using Laravel, expanding application functionality while maintaining robust error handling",
-			"Utilized workflow charts and diagrams to plan and optimize code structure for maintainability"
+			"Conducted thorough QA and testing, reducing production issues by 75% through stronger test coverage",
+			"Integrated multiple third party APIs using Laravel, expanding application functionality with robust error handling",
+			"Used workflow diagrams to plan and optimize code structure for long term maintainability"
 		]
 	},
 	{
-		"title": "Software Engineer",
+		"title": "Software Engineer Intern",
 		"type": "Internship",
 		"company": "PT Promedia Citra Informatindo",
 		"date_start": "January 2021",
@@ -205,10 +228,10 @@
 			"Documentation"
 		],
 		"descriptions": [
-			"Identified and resolved bugs in existing systems, improving overall system stability and user satisfaction",
-			"Created comprehensive technical documentation and user manuals for complex software applications",
-			"Developed Android applications using Java and created APIs for mobile app integration",
-			"Gained versatility by working with both Laravel and Yii frameworks based on project requirements"
+			"Identified and resolved bugs in production systems, improving overall stability and user satisfaction",
+			"Authored technical documentation and user manuals for complex software applications",
+			"Built Android applications in Java and developed REST APIs for mobile integration",
+			"Worked across both Laravel and Yii frameworks depending on project requirements"
 		]
 	}
 ]

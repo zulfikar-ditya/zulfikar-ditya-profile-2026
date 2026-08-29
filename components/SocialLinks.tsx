@@ -43,7 +43,7 @@ export default function SocialLinks() {
 		},
 		{
 			name: "Resume",
-			url: "https://drive.google.com/file/d/1uyQ17vPrpQ8_l_iTmK5cqanHB9ZbTfO8/view?usp=sharing",
+			url: "https://drive.google.com/file/d/1wU2TJMpLU6Z8oAIkq0M16IeK3xisho1M/view?usp=sharing",
 			icon: (
 				<path d="M14 3v4a1 1 0 0 0 1 1h4 M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z M9 17h6 M9 13h6" />
 			),
@@ -101,7 +101,9 @@ export default function SocialLinks() {
 						strokeWidth="2"
 						strokeLinecap="round"
 						strokeLinejoin="round"
-						className={`transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
+						className={`transition-transform duration-300 ${
+							isOpen ? "rotate-45" : ""
+						}`}
 					>
 						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 						<path d="M12 5l0 14 M5 12l14 0" />

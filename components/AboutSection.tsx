@@ -13,15 +13,41 @@ const skillsData = {
 		"Fiber",
 		"Gin",
 	],
-	databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+	databases: [
+		"PostgreSQL",
+		"MySQL",
+		"MongoDB",
+		"Redis",
+		"Query Tuning",
+		"Indexing",
+		"Schema Design",
+		"N+1 Mitigation",
+	],
+	aiEngineering: [
+		"Retrieval Augmented Generation",
+		"Embeddings",
+		"Chunking Strategies",
+		"pgvector",
+		"Qdrant",
+		"Context Assembly",
+		"Prompt Engineering",
+		"System Prompt Design",
+		"LLM Guardrails",
+		"Output Validation",
+		"Prompt Injection Mitigation",
+		"OpenAI",
+		"Anthropic",
+		"OpenRouter",
+	],
 	systemArchitecture: [
 		"RESTful API Design",
-		"OAuth & JWT Auth",
+		"OAuth 2.0 & JWT",
 		"Clean Architecture",
 		"DTOs & Validation",
 		"Queue Workers",
 		"Horizontal Scaling",
 		"Caching Strategy",
+		"Rate Limiting",
 	],
 	devops: [
 		"Docker",
@@ -30,6 +56,7 @@ const skillsData = {
 		"GitLab CI/CD",
 		"Server Configuration",
 		"Deployment Pipelines",
+		"PM2",
 	],
 	monitoring: [
 		"Logging & Metrics",
@@ -77,14 +104,18 @@ export default function AboutSection() {
 					<span className="text-p-accent font-semibold">
 						5+ years of experience
 					</span>{" "}
-					building reliable, secure, and high-performance backend systems.
-					Demonstrated expertise in{" "}
+					building reliable, secure, and high-performance backend systems, now
+					extending into{" "}
+					<span className="text-p-accent font-semibold">
+						applied AI engineering
+					</span>
+					. Demonstrated expertise in{" "}
 					<span className="text-p-accent font-semibold">clean architecture</span>
 					,{" "}
 					<span className="text-p-accent font-semibold">
 						scalable API design
 					</span>
-					, and efficient data workflows using{" "}
+					, and data-intensive workflows using{" "}
 					<span className="text-p-accent font-semibold">
 						Laravel, Node.js, Bun, and Go
 					</span>
@@ -100,7 +131,20 @@ export default function AboutSection() {
 					<span className="text-p-accent font-semibold">
 						99.9% application uptime
 					</span>
-					. Strong foundation in{" "}
+					. Builds{" "}
+					<span className="text-p-accent font-semibold">
+						retrieval augmented generation pipelines
+					</span>{" "}
+					on pgvector and Qdrant, designs{" "}
+					<span className="text-p-accent font-semibold">
+						system prompts and guardrails
+					</span>
+					, and integrates{" "}
+					<span className="text-p-accent font-semibold">
+						OpenAI, Anthropic, and OpenRouter
+					</span>{" "}
+					models into production services with the same reliability discipline
+					applied to any external dependency. Strong foundation in{" "}
 					<span className="text-p-accent font-semibold">
 						PostgreSQL and MySQL optimization
 					</span>
@@ -117,8 +161,17 @@ export default function AboutSection() {
 						30+ published articles
 					</span>{" "}
 					on Medium reaching{" "}
-					<span className="text-p-accent font-semibold">190+ followers</span>.
+					<span className="text-p-accent font-semibold">230+ followers</span>.
 				</p>
+
+				{/* AI Engineering — highlighted */}
+				<div className="mb-3">
+					<SkillCard
+						title="AI Engineering"
+						skills={skillsData.aiEngineering}
+						accentColor="#e12afb"
+					/>
+				</div>
 
 				{/* Skills grid */}
 				<div className="grid md:grid-cols-2 gap-3">

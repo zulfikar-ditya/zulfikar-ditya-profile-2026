@@ -1,5 +1,10 @@
 import experienceData from "@/public/mock/experience.json";
 
+interface ExperienceGroup {
+	label: string;
+	descriptions: string[];
+}
+
 interface Experience {
 	title: string;
 	type: string;
@@ -7,7 +12,30 @@ interface Experience {
 	date_start: string;
 	date_end: string;
 	skills: string[];
-	descriptions: string[];
+	/** Short context line shown above the bullets (e.g. a promotion note). */
+	note?: string;
+	/** Flat bullet list — used when the role has no sub-tracks. */
+	descriptions?: string[];
+	/** Labelled bullet groups — used when one role spans multiple tracks. */
+	groups?: ExperienceGroup[];
+}
+
+function BulletList({ descriptions }: { descriptions: string[] }) {
+	return (
+		<ul className="space-y-2">
+			{descriptions.map((desc, descIndex) => (
+				<li
+					key={descIndex}
+					className="text-p-muted text-sm flex items-start gap-2.5"
+				>
+					<span className="text-p-accent font-jetbrains mt-0.5 select-none shrink-0">
+						›
+					</span>
+					<span className="leading-relaxed">{desc}</span>
+				</li>
+			))}
+		</ul>
+	);
 }
 
 export default function WorkExperienceSection() {
@@ -64,20 +92,33 @@ export default function WorkExperienceSection() {
 									</div>
 								</div>
 
+								{/* Context note */}
+								{exp.note && (
+									<p className="text-p-ink text-sm leading-relaxed border-l-2 border-p-accent pl-3 mb-5">
+										{exp.note}
+									</p>
+								)}
+
 								{/* Descriptions */}
-								<ul className="space-y-2 mb-5">
-									{exp.descriptions.map((desc, descIndex) => (
-										<li
-											key={descIndex}
-											className="text-p-muted text-sm flex items-start gap-2.5"
-										>
-											<span className="text-p-accent font-jetbrains mt-0.5 select-none shrink-0">
-												›
-											</span>
-											<span className="leading-relaxed">{desc}</span>
-										</li>
-									))}
-								</ul>
+								<div className="mb-5">
+									{exp.groups ? (
+										<div className="space-y-5">
+											{exp.groups.map((group) => (
+												<div key={group.label}>
+													<div className="flex items-center gap-3 mb-3">
+														<p className="font-jetbrains text-xs tracking-[0.2em] text-p-accent uppercase shrink-0">
+															{group.label}
+														</p>
+														<div className="flex-1 h-px bg-p-border" />
+													</div>
+													<BulletList descriptions={group.descriptions} />
+												</div>
+											))}
+										</div>
+									) : (
+										<BulletList descriptions={exp.descriptions ?? []} />
+									)}
+								</div>
 
 								{/* Skills */}
 								<div className="flex flex-wrap gap-2">

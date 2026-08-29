@@ -6,7 +6,7 @@ export default function HeroProfileCard() {
 	return (
 		<ProfileCard
 			name="Zulfikar Ditya"
-			title="Backend Developer"
+			title="Backend & AI Engineer"
 			handle="zulfikar-ditya"
 			status="Open to work"
 			contactText="Hire me"

@@ -60,7 +60,7 @@ export default function Home() {
 							<h2 className="font-jetbrains text-sm md:text-base text-p-muted">
 								<TextType
 									text={[
-										"Backend Engineer — Laravel, Go, Node.js — Scalable APIs & Performance Optimization",
+										"Backend Engineer & AI Engineer — Laravel, Node.js, Go — RAG, Embeddings, LLM Guardrails — Scalable APIs for Enterprise",
 									]}
 									typingSpeed={32}
 									pauseDuration={2500}

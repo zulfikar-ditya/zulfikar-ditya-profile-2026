@@ -26,24 +26,43 @@ const jetbrainsMono = JetBrains_Mono({
 
 const siteUrl = "https://zulfikarditya.com";
 const siteName = "Zulfikar Ditya";
+const siteTitle = `${siteName} - Backend & AI Engineer | Laravel, Node.js, Go, RAG`;
 const siteDescription =
-	"Backend Engineer with 5+ years of experience building scalable APIs and high-performance systems using Laravel, Go, and Node.js. Proven track record in clean architecture, database optimization, and CI/CD pipelines.";
+	"Zulfikar Ditya Antariksa — Backend Engineer with 5+ years of experience building scalable APIs and high-performance systems using Laravel, Node.js, Bun, and Go, now extending into applied AI engineering with RAG pipelines, embeddings, and LLM guardrails. Proven track record in clean architecture, database optimization, and CI/CD pipelines.";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
 	title: {
-		default: `${siteName} - Backend Engineer | Laravel, Go, Node.js`,
+		default: siteTitle,
 		template: `%s | ${siteName}`,
 	},
 	description: siteDescription,
 	keywords: [
+		// Name variants
 		"Zulfikar Ditya",
+		"Zulfikar Ditya Antariksa",
+		"Zulfikar",
+		"Ditya",
+		"Antariksa",
+		"Zulfikar Antariksa",
+		"Ditya Antariksa",
+		"zulfikar-ditya",
+		"zulfikarditya",
+		"Zulfikar Ditya Backend Engineer",
+		"Zulfikar Ditya AI Engineer",
+		"Zulfikar Ditya Laravel",
+		"Zulfikar Ditya portfolio",
+		"Zulfikar Ditya Antariksa Jakarta",
+		"Zulfikar Ditya Indonesia",
+		// Roles & stack
 		"Backend Engineer",
 		"Backend Developer",
+		"AI Engineer",
 		"Laravel Developer",
 		"Go Developer",
 		"Node.js Developer",
 		"NestJS",
+		"Bun",
 		"REST API",
 		"API Design",
 		"PostgreSQL",
@@ -54,8 +73,23 @@ export const metadata: Metadata = {
 		"DevOps",
 		"Docker",
 		"CI/CD",
+		// AI engineering
+		"Retrieval Augmented Generation",
+		"RAG",
+		"Embeddings",
+		"pgvector",
+		"Qdrant",
+		"Vector Database",
+		"Prompt Engineering",
+		"LLM Guardrails",
+		"OpenAI",
+		"Anthropic",
+		"OpenRouter",
 	],
-	authors: [{ name: "Zulfikar Ditya", url: siteUrl }],
+	authors: [
+		{ name: "Zulfikar Ditya Antariksa", url: siteUrl },
+		{ name: "Zulfikar Ditya", url: siteUrl },
+	],
 	creator: "Zulfikar Ditya",
 	publisher: "Zulfikar Ditya",
 	robots: {
@@ -74,20 +108,20 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		url: siteUrl,
 		siteName: siteName,
-		title: `${siteName} - Backend Engineer | Laravel, Go, Node.js`,
+		title: siteTitle,
 		description: siteDescription,
 		images: [
 			{
 				url: `${siteUrl}/og-image.png`, // Add your OG image
 				width: 1200,
 				height: 630,
-				alt: `${siteName} - Backend Engineer`,
+				alt: `Zulfikar Ditya Antariksa - Backend & AI Engineer`,
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: `${siteName} - Backend Engineer | Laravel, Go, Node.js`,
+		title: siteTitle,
 		description: siteDescription,
 		creator: "@zulfikar_ditya",
 		images: [
@@ -95,7 +129,7 @@ export const metadata: Metadata = {
 				url: `${siteUrl}/og-image.png`,
 				width: 1200,
 				height: 630,
-				alt: `${siteName} - Backend Engineer`,
+				alt: `Zulfikar Ditya Antariksa - Backend & AI Engineer`,
 			},
 		],
 	},
@@ -128,12 +162,36 @@ export default function RootLayout({
 	const personJsonLd = {
 		"@context": "https://schema.org",
 		"@type": "Person",
-		name: "Zulfikar Ditya",
+		name: "Zulfikar Ditya Antariksa",
+		alternateName: [
+			"Zulfikar Ditya",
+			"Zulfikar",
+			"Ditya Antariksa",
+			"zulfikar-ditya",
+		],
+		givenName: "Zulfikar",
+		additionalName: "Ditya",
+		familyName: "Antariksa",
 		url: siteUrl,
 		image: `${siteUrl}/og-image.png`,
-		jobTitle: "Backend Engineer",
+		jobTitle: "Backend Engineer & AI Engineer",
 		email: "zulfikarditya.work@gmail.com",
 		description: siteDescription,
+		address: {
+			"@type": "PostalAddress",
+			addressLocality: "Jakarta",
+			addressCountry: "ID",
+		},
+		alumniOf: [
+			{
+				"@type": "CollegeOrUniversity",
+				name: "Cakrawala University",
+			},
+			{
+				"@type": "EducationalOrganization",
+				name: "SMKN 1 Jenangan",
+			},
+		],
 		sameAs: [
 			"https://www.linkedin.com/in/zulfikar-ditya",
 			"https://github.com/zulfikar-ditya",
@@ -142,13 +200,23 @@ export default function RootLayout({
 		],
 		knowsAbout: [
 			"Backend Development",
+			"AI Engineering",
+			"Retrieval Augmented Generation",
+			"Embeddings",
+			"Vector Databases",
+			"pgvector",
+			"Qdrant",
+			"Prompt Engineering",
+			"LLM Guardrails",
 			"Laravel",
 			"Go",
 			"Node.js",
+			"Bun",
 			"NestJS",
 			"REST API Design",
 			"PostgreSQL",
 			"MySQL",
+			"MongoDB",
 			"Redis",
 			"Docker",
 			"CI/CD",
@@ -168,9 +236,11 @@ export default function RootLayout({
 		name: siteName,
 		url: siteUrl,
 		description: siteDescription,
+		alternateName: ["Zulfikar Ditya Antariksa", "Zulfikar Ditya Portfolio"],
 		author: {
 			"@type": "Person",
-			name: "Zulfikar Ditya",
+			name: "Zulfikar Ditya Antariksa",
+			alternateName: "Zulfikar Ditya",
 		},
 	};
 
