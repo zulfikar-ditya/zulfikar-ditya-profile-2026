@@ -1,63 +1,178 @@
 [
 	{
+		"category": "AskRepo",
+		"description": "Point it at a codebase and ask a question in normal language. It answers, and shows the exact files and lines the answer came from.",
+		"orgUrl": "https://github.com/aolus-software/ask-repo",
+		"repos": [
+			{
+				"name": "ask-repo",
+				"description": "Self-hosted tool that indexes a git repository and answers questions about it with cited files and line ranges. It also drafts QA checklists and mock data for a code module.",
+				"url": "https://github.com/aolus-software/ask-repo",
+				"tags": [
+					"Python",
+					"FastAPI",
+					"LangChain",
+					"LangGraph",
+					"Qdrant",
+					"Kafka",
+					"PostgreSQL",
+					"Next.js"
+				]
+			}
+		]
+	},
+	{
 		"category": "Fexend",
-		"description": "A VSCode theme and admin dashboard template ecosystem",
+		"description": "A colour theme for the code editor many developers use, plus ready-made admin screens they can drop into a project.",
 		"orgUrl": "https://github.com/fexend",
 		"repos": [
 			{
 				"name": "fexend-blade",
 				"description": "Admin dashboard template built with Laravel Blade and Tailwind CSS",
 				"url": "https://github.com/fexend/fexend-blade",
-				"tags": ["Laravel", "Blade", "Tailwind CSS"]
+				"tags": [
+					"Laravel",
+					"Blade",
+					"Tailwind CSS"
+				]
 			},
 			{
 				"name": "fexend-html",
 				"description": "Static HTML admin dashboard template with Tailwind CSS",
 				"url": "https://github.com/fexend/fexend-html",
-				"tags": ["HTML", "Tailwind CSS"]
+				"tags": [
+					"HTML",
+					"Tailwind CSS"
+				]
 			},
 			{
 				"name": "fexend-theme",
 				"description": "VSCode color theme extension for a clean coding experience",
 				"url": "https://github.com/fexend/fexend-theme",
-				"tags": ["VSCode", "Theme"]
+				"tags": [
+					"VSCode",
+					"Theme"
+				]
 			}
 		]
 	},
 	{
 		"category": "Clean Starter",
-		"description": "Production-ready boilerplate templates with clean architecture",
+		"description": "Starting kits. Each one is a tidy, working foundation, so a developer doesn't begin a new app from an empty folder.",
 		"orgUrl": "https://github.com/aolus-software",
 		"repos": [
 			{
 				"name": "clean-elysia",
 				"description": "Clean architecture starter with Elysia.js, Drizzle ORM, PostgreSQL, and BullMQ",
 				"url": "https://github.com/aolus-software/clean-elysia",
-				"tags": ["Bun", "Elysia.js", "Drizzle", "PostgreSQL", "BullMQ", "TypeBox"]
+				"tags": [
+					"Bun",
+					"Elysia.js",
+					"Drizzle",
+					"PostgreSQL",
+					"BullMQ",
+					"TypeBox"
+				]
 			},
 			{
 				"name": "clean-hono",
 				"description": "Clean architecture starter with Hono, Drizzle ORM, PostgreSQL, and BullMQ",
 				"url": "https://github.com/aolus-software/clean-hono",
-				"tags": ["Bun", "Hono", "Drizzle", "PostgreSQL", "BullMQ", "Zod"]
+				"tags": [
+					"Bun",
+					"Hono",
+					"Drizzle",
+					"PostgreSQL",
+					"BullMQ",
+					"Zod"
+				]
 			},
 			{
 				"name": "clean-fastify",
 				"description": "Clean architecture starter with Fastify, Drizzle ORM, PostgreSQL, and BullMQ",
 				"url": "https://github.com/aolus-software/clean-fastify",
-				"tags": ["Bun", "Fastify", "Drizzle", "PostgreSQL", "BullMQ", "TypeBox"]
+				"tags": [
+					"Bun",
+					"Fastify",
+					"Drizzle",
+					"PostgreSQL",
+					"BullMQ",
+					"TypeBox"
+				]
 			},
 			{
 				"name": "clean-nest-prisma-pg",
 				"description": "Clean architecture starter with NestJS, Prisma, and PostgreSQL",
 				"url": "https://github.com/aolus-software/clean-nest-prisma-pg",
-				"tags": ["Bun", "NestJS", "Prisma", "PostgreSQL", "BullMQ"]
+				"tags": [
+					"Bun",
+					"NestJS",
+					"Prisma",
+					"PostgreSQL",
+					"BullMQ"
+				]
 			},
 			{
 				"name": "clean-nest-drizzle-pg",
 				"description": "Clean architecture starter with NestJS, Drizzle ORM, and PostgreSQL",
 				"url": "https://github.com/aolus-software/clean-nest-drizzle-pg",
-				"tags": ["Bun", "NestJS", "Drizzle", "PostgreSQL", "BullMQ"]
+				"tags": [
+					"Bun",
+					"NestJS",
+					"Drizzle",
+					"PostgreSQL",
+					"BullMQ"
+				]
+			},
+			{
+				"name": "clean-go-fiber",
+				"description": "Clean architecture starter with Go, Fiber, GORM, PostgreSQL, and Asynq",
+				"url": "https://github.com/aolus-software/clean-go-fiber",
+				"tags": [
+					"Go",
+					"Fiber",
+					"GORM",
+					"PostgreSQL",
+					"Asynq"
+				]
+			},
+			{
+				"name": "clean-elysia-prisma",
+				"description": "Clean architecture starter with Elysia.js, Prisma, PostgreSQL, and BullMQ",
+				"url": "https://github.com/aolus-software/clean-elysia-prisma",
+				"tags": [
+					"Bun",
+					"Elysia.js",
+					"Prisma",
+					"PostgreSQL",
+					"BullMQ"
+				]
+			},
+			{
+				"name": "clean-hono-prisma",
+				"description": "Clean architecture starter with Hono, Prisma, PostgreSQL, and BullMQ",
+				"url": "https://github.com/aolus-software/clean-hono-prisma",
+				"tags": [
+					"Bun",
+					"Hono",
+					"Prisma",
+					"PostgreSQL",
+					"BullMQ",
+					"Zod"
+				]
+			},
+			{
+				"name": "clean-fastify-prisma",
+				"description": "Clean architecture starter with Fastify, Prisma, PostgreSQL, and BullMQ",
+				"url": "https://github.com/aolus-software/clean-fastify-prisma",
+				"tags": [
+					"Bun",
+					"Fastify",
+					"Prisma",
+					"PostgreSQL",
+					"BullMQ",
+					"Zod"
+				]
 			}
 		]
 	}

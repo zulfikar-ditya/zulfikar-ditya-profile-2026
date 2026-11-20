@@ -5,6 +5,7 @@
 		"company": "SUPERFUTUREKOMPANY",
 		"date_start": "September 2024",
 		"date_end": "Present",
+		"summary": "I build the behind-the-scenes systems for business apps: logins, loyalty points, WhatsApp chatbots, and the databases under them. Since July 2026 I also build AI assistants that answer questions from an organisation's own documents.",
 		"skills": [
 			"Laravel",
 			"NestJS",
@@ -24,7 +25,13 @@
 			"Redis",
 			"Queue Workers",
 			"Logging & Monitoring",
-			"CI/CD"
+			"CI/CD",
+			"Python",
+			"FastAPI",
+			"Kafka",
+			"BullMQ",
+			"Self-hosted LLMs (vLLM)",
+			"OCR"
 		],
 		"note": "Promoted to AI Engineer Assistant in July 2026 while retaining backend ownership.",
 		"groups": [
@@ -32,6 +39,8 @@
 				"label": "AI Engineering",
 				"descriptions": [
 					"Built retrieval augmented generation pipelines end to end, covering chunking strategy, embedding generation, vector storage and retrieval on pgvector and Qdrant, and context assembly for production LLM features",
+					"Rebuilding the AI engine of a self-hosted question answering platform for public-sector documents, answering in Indonesian and English with cited sources, on Python, FastAPI, pgvector, Kafka, and locally hosted models",
+					"Added long term user memory to the assistant, so preferences a user states in one chat shape later answers",
 					"Designed, versioned, and iterated system prompts and prompt templates, validating behaviour against real user input rather than curated examples",
 					"Implemented guardrails across the request path including input validation, output filtering, and prompt injection mitigation, with defined fallback behaviour when a model response cannot be trusted",
 					"Integrated OpenAI, Anthropic, and OpenRouter models (DeepSeek, Qwen) with retries, timeouts, provider fallback routing, structured logging, and usage tracking",
@@ -53,7 +62,8 @@
 					"Developed conversational bot services on top of the WhatsApp Business API for automated customer interactions",
 					"Engineered a multi tenant WhatsApp business messaging platform (channel and inbox style) supporting team based agent workflows",
 					"Implemented internationalization (i18n) across backend services and APIs to support multi language product rollouts",
-					"Built backend infrastructure for an AI platform management system, including model orchestration, usage tracking, and access control"
+					"Built backend infrastructure for an AI platform management system, including model orchestration, usage tracking, and access control",
+					"Building the backend API for an in-store promotion redemption program, where shop staff submit reward claims on a customer's behalf from a mobile web app"
 				]
 			}
 		]
@@ -64,6 +74,7 @@
 		"company": "Self Employed",
 		"date_start": "December 2025",
 		"date_end": "April 2026",
+		"summary": "I led two developers building a company's website. I planned how it would be built, set up the servers it runs on, and wrote code alongside them.",
 		"skills": [
 			"Team Leadership",
 			"Project Management",
@@ -89,7 +100,12 @@
 		"company": "PT Anomali Trans Teknologi",
 		"date_start": "September 2024",
 		"date_end": "September 2024",
-		"skills": ["Mendix", "Low-code Development", "PostgreSQL"],
+		"summary": "I built a business app for a railway company on a tight deadline, using a tool that needs very little hand-written code.",
+		"skills": [
+			"Mendix",
+			"Low-code Development",
+			"PostgreSQL"
+		],
 		"descriptions": [
 			"Delivered a custom Mendix application for PT KAI Indonesia, focusing on rapid low code delivery against critical business deadlines",
 			"Collaborated with cross functional teams to translate complex business logic into functional flows within tight delivery windows"
@@ -101,6 +117,7 @@
 		"company": "Self Employed",
 		"date_start": "May 2024",
 		"date_end": "March 2025",
+		"summary": "I worked directly with clients. I listened to what they needed, sketched it, built it, and put it online.",
 		"skills": [
 			"Laravel",
 			"Pest Testing",
@@ -126,7 +143,14 @@
 		"company": "PT Anomali Trans Teknologi",
 		"date_start": "June 2023",
 		"date_end": "September 2024",
-		"skills": ["Laravel", "MySQL", "PostgreSQL", "Mendix", "ASP.NET"],
+		"summary": "I built and looked after web apps that handle a lot of data, and designed how that data is stored so it stays correct and quick to find.",
+		"skills": [
+			"Laravel",
+			"MySQL",
+			"PostgreSQL",
+			"Mendix",
+			"ASP.NET"
+		],
 		"descriptions": [
 			"Designed and optimized PostgreSQL schemas supporting high volume web applications with complex business logic",
 			"Built and maintained full stack web applications using Laravel MVC with focus on data integrity and security",
@@ -141,6 +165,7 @@
 		"company": "PT SEJE Digital Utama",
 		"date_start": "October 2023",
 		"date_end": "May 2024",
+		"summary": "I built the connections that let different apps share data safely, and wrote the instructions other developers needed to use them.",
 		"skills": [
 			"Laravel",
 			"API Development",
@@ -161,6 +186,7 @@
 		"company": "Intive Studio",
 		"date_start": "June 2023",
 		"date_end": "March 2024",
+		"summary": "I built business software that handles money in several currencies, where a wrong number is not an option.",
 		"skills": [
 			"Laravel",
 			"ERP Development",
@@ -180,6 +206,7 @@
 		"company": "Intive Studio",
 		"date_start": "July 2022",
 		"date_end": "June 2023",
+		"summary": "I built the software companies use to run their day: buying, selling, stock, invoices and staff. I also coached newer developers.",
 		"skills": [
 			"Laravel",
 			"ERP Systems",
@@ -200,6 +227,7 @@
 		"company": "SEJE Digital",
 		"date_start": "March 2022",
 		"date_end": "August 2022",
+		"summary": "I tested software before it was released and connected it to outside services. That testing cut the problems reaching customers by 75%.",
 		"skills": [
 			"Laravel",
 			"API Integration",
@@ -219,6 +247,7 @@
 		"company": "PT Promedia Citra Informatindo",
 		"date_start": "January 2021",
 		"date_end": "June 2021",
+		"summary": "My first job in tech. I fixed bugs, wrote user manuals, and built my first Android apps.",
 		"skills": [
 			"Laravel",
 			"Yii Framework",
