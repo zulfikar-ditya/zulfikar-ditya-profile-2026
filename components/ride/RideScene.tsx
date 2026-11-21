@@ -235,6 +235,9 @@ function Signal({ x, y }: { x: number; y: number }) {
 	);
 }
 
+/** A board with a button is this much taller, so the button has room under the note. */
+const BUTTON = { height: 54, room: 72 };
+
 /**
  * The words at a stop, in the flat coordinates of the surface they are printed
  * on: a kicker, an optional big value, the caption, then one line of specifics.
@@ -245,12 +248,16 @@ function BoardText({
 	color,
 	quiet,
 	bigSize,
+	kickerColor = color,
+	shift = 0,
 }: {
 	board: Board;
 	accent: string;
 	color: string;
 	quiet: string;
 	bigSize: number;
+	kickerColor?: string;
+	shift?: number;
 }) {
 	const big = board.big ?? [];
 	const counted = /^(\d+(?:\.\d+)?)(%?)$/.exec(big[0] ?? "");
@@ -259,12 +266,12 @@ function BoardText({
 	const lineStep = Math.round(lineSize * 1.38);
 	const bigStep = Math.round(bigSize * 0.98);
 	const lastBig = big.length > 0 ? 62 + big.length * bigStep : 58;
-	const firstLine = lastBig + (big.length > 0 ? 56 : 62);
+	const firstLine = lastBig + (big.length > 0 ? 56 : 62) + shift;
 	const noteLine = firstLine + (board.lines.length - 1) * lineStep + 44;
 
 	return (
 		<>
-			<text x={34} y={58} fontSize={27} className="font-sans font-semibold" fill={color}>
+			<text x={34} y={58} fontSize={27} className="font-sans font-semibold" fill={kickerColor}>
 				{board.kicker}
 			</text>
 			{big.map((word, i) => (
@@ -296,6 +303,74 @@ function BoardText({
 			<text x={34} y={noteLine} fontSize={21} className="font-sans font-bold" fill={quiet}>
 				{board.note}
 			</text>
+			{board.button && (
+				<a
+					href={board.button.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					tabIndex={-1}
+					className="ride-button"
+				>
+					<rect
+						x={34}
+						y={noteLine + 24}
+						width={board.button.label.length * 14 + 52}
+						height={BUTTON.height}
+						fill="var(--color-marigold)"
+					/>
+					<text
+						x={60}
+						y={noteLine + 24 + 36}
+						fontSize={25}
+						className="font-sans font-extrabold"
+						fill="var(--color-ink)"
+					>
+						{board.button.label}
+					</text>
+				</a>
+			)}
+		</>
+	);
+}
+
+/** A kicker, then a few things each under its own heading, then the line of specifics. */
+function ListText({ board, accent }: { board: Board; accent: string }) {
+	const items = board.items ?? [];
+	const block = 128;
+
+	return (
+		<>
+			<text x={34} y={58} fontSize={27} className="font-sans font-semibold" fill="var(--color-paper)">
+				{board.kicker}
+			</text>
+			{items.map((item, i) => (
+				<g key={item.title}>
+					<text x={32} y={118 + i * block} fontSize={40} className="font-display" fill={accent}>
+						{item.title}
+					</text>
+					{item.lines.map((line, k) => (
+						<text
+							key={line}
+							x={34}
+							y={118 + i * block + 36 + k * 32}
+							fontSize={25}
+							className="font-sans font-semibold"
+							fill="var(--color-paper)"
+						>
+							{line}
+						</text>
+					))}
+				</g>
+			))}
+			<text
+				x={34}
+				y={118 + (items.length - 1) * block + 68 + 46}
+				fontSize={21}
+				className="font-sans font-bold"
+				fill="var(--color-steel)"
+			>
+				{board.note}
+			</text>
 		</>
 	);
 }
@@ -320,7 +395,25 @@ const boardShape = {
 		text: "var(--color-ink)",
 		quiet: "var(--color-asphalt)",
 	},
+	sign: {
+		half: 290,
+		z0: 120,
+		z1: 480,
+		fill: tone("var(--color-marigold)"),
+		text: "var(--color-ink)",
+		quiet: "var(--color-asphalt)",
+	},
+	list: {
+		half: 290,
+		z0: 60,
+		z1: 570,
+		fill: boardTone,
+		text: "var(--color-paper)",
+		quiet: "var(--color-steel)",
+	},
 };
+
+const SIGN_BAND = 88;
 
 /** A board behind the platform, with the stop's words printed on its face. */
 function StationBoard({
@@ -331,19 +424,22 @@ function StationBoard({
 }: {
 	x: number;
 	board: Board;
-	look: "billboard" | "wide";
+	look: keyof typeof boardShape;
 	accent: string;
 }) {
 	const shape = boardShape[look];
+	const top = shape.z1 + (board.button ? BUTTON.room : 0);
+	const posts = look === "sign" ? [x - 12] : [x - shape.half + 50, x + shape.half - 66];
+	const postWidth = look === "sign" ? 24 : 16;
 
 	return (
 		<Thing x0={x - shape.half} x1={x + shape.half} y0={BOARD_Y - BOARD_DEPTH} y1={BOARD_Y}>
 			<g data-x={x}>
-				{[x - shape.half + 50, x + shape.half - 66].map((post) => (
+				{posts.map((post) => (
 					<Box
 						key={post}
 						x0={post}
-						x1={post + 16}
+						x1={post + postWidth}
 						y0={BOARD_Y - BOARD_DEPTH}
 						y1={BOARD_Y}
 						z0={0}
@@ -357,16 +453,133 @@ function StationBoard({
 					y0={BOARD_Y - BOARD_DEPTH}
 					y1={BOARD_Y}
 					z0={shape.z0}
-					z1={shape.z1}
+					z1={top}
 					fill={shape.fill}
 					front={
-						<BoardText
-							board={board}
-							accent={look === "wide" ? "var(--color-red)" : accent}
-							color={shape.text}
-							quiet={shape.quiet}
-							bigSize={(board.big?.length ?? 0) > 1 ? 86 : 150}
+						look === "list" ? (
+							<ListText board={board} accent={accent} />
+						) : (
+							<>
+								{look === "sign" && (
+									<rect width={shape.half * 2} height={SIGN_BAND} fill="var(--color-red)" />
+								)}
+								<BoardText
+									board={board}
+									accent={look === "wide" ? "var(--color-red)" : accent}
+									color={shape.text}
+									quiet={shape.quiet}
+									bigSize={(board.big?.length ?? 0) > 1 ? 86 : 150}
+									kickerColor={look === "sign" ? "var(--color-paper)" : undefined}
+									shift={look === "sign" ? 34 : 0}
+								/>
+							</>
+						)
+					}
+				/>
+				{look === "list" && (
+					<Box
+						x0={x - shape.half + 20}
+						x1={x + shape.half - 20}
+						y0={BOARD_Y - BOARD_DEPTH}
+						y1={BOARD_Y}
+						z0={shape.z1}
+						z1={shape.z1 + 16}
+						fill={tone(accent)}
+					/>
+				)}
+			</g>
+		</Thing>
+	);
+}
+
+const CRATES = { half: 280, depth: 80, z0: 60, base: 50, tall: 124, cap: 60 };
+const crateTones = [
+	{ fill: tone("var(--color-red)"), text: "var(--color-paper)" },
+	{ fill: paper, text: "var(--color-ink)" },
+	{ fill: tone("var(--color-cobalt)"), text: "var(--color-paper)" },
+];
+const crateNudge = [-8, 10, -4];
+
+/**
+ * A stack of crates on a stand, one thing built on each: the kicker is on the
+ * cap at the top and the line of specifics on the base.
+ */
+function CrateStack({ x, board }: { x: number; board: Board }) {
+	const items = board.items ?? [];
+	const y0 = BOARD_Y - CRATES.depth;
+	const baseTop = CRATES.z0 + CRATES.base;
+	const top = baseTop + items.length * CRATES.tall;
+
+	return (
+		<Thing x0={x - CRATES.half - 10} x1={x + CRATES.half + 10} y0={y0} y1={BOARD_Y}>
+			<g data-x={x}>
+				{[x - CRATES.half + 50, x + CRATES.half - 66].map((post) => (
+					<Box key={post} x0={post} x1={post + 16} y0={y0 + 20} y1={BOARD_Y - 20} z0={0} z1={CRATES.z0} fill={boardTone} />
+				))}
+				<Box
+					x0={x - CRATES.half}
+					x1={x + CRATES.half}
+					y0={y0}
+					y1={BOARD_Y}
+					z0={CRATES.z0}
+					z1={baseTop}
+					fill={boardTone}
+					front={
+						<text x={28} y={33} fontSize={21} className="font-sans font-bold" fill="var(--color-steel)">
+							{board.note}
+						</text>
+					}
+				/>
+				{items.map((_, k) => {
+					const i = items.length - 1 - k;
+					const item = items[i];
+					const look = crateTones[i % crateTones.length];
+					const cx = x + crateNudge[i % crateNudge.length];
+
+					return (
+						<Box
+							key={item.title}
+							x0={cx - CRATES.half}
+							x1={cx + CRATES.half}
+							y0={y0}
+							y1={BOARD_Y}
+							z0={baseTop + k * CRATES.tall}
+							z1={baseTop + (k + 1) * CRATES.tall}
+							fill={look.fill}
+							front={
+								<>
+									<text x={28} y={58} fontSize={40} className="font-display" fill={look.text}>
+										{item.title}
+									</text>
+									{item.lines.map((line, n) => (
+										<text
+											key={line}
+											x={30}
+											y={96 + n * 30}
+											fontSize={25}
+											className="font-sans font-semibold"
+											fill={look.text}
+										>
+											{line}
+										</text>
+									))}
+								</>
+							}
 						/>
+					);
+				})}
+				<Box
+					x0={x - CRATES.half + 20}
+					x1={x - CRATES.half + 400}
+					y0={y0 + 16}
+					y1={BOARD_Y}
+					z0={top}
+					z1={top + CRATES.cap}
+					fill={boardTone}
+					front={
+						<text x={24} y={40} fontSize={27} className="font-sans font-semibold" fill="var(--color-paper)">
+							{board.kicker}
+						</text>
 					}
 				/>
 			</g>
@@ -525,7 +738,7 @@ export default function RideScene({
 	camera: string;
 }) {
 	const start = -1700;
-	const end = (stops.length - 1) * GAP + 1800;
+	const end = (stops.length - 1) * GAP + 2700;
 	const length = end - start;
 	const back: { depth: number; node: ReactNode }[] = [];
 	const front: { depth: number; node: ReactNode }[] = [];
@@ -544,7 +757,12 @@ export default function RideScene({
 						depth: x + WALL.x1 + WALL.y1,
 						node: <WallBoard key={`board-${stop.id}`} x={x} board={stop.board} />,
 					}
-				: {
+				: stop.look === "crates"
+					? {
+							depth: x + CRATES.half + BOARD_Y,
+							node: <CrateStack key={`board-${stop.id}`} x={x} board={stop.board} />,
+						}
+					: {
 						depth: x + boardShape[stop.look].half + BOARD_Y,
 						node: (
 							<StationBoard

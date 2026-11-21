@@ -20,9 +20,10 @@ export default function About() {
 						Laravel and NestJS, with Go, Bun and Python (FastAPI) where they fit.
 					</p>
 					<p>
-						For the past year I&apos;ve also built AI assistants for organisations.
-						You ask a question the way you&apos;d ask a colleague. The assistant
-						reads through thousands of the organisation&apos;s own documents and
+						Since 2026 I&apos;ve also built products on top of AI models. One
+						is an assistant for a government&apos;s public documents. You ask a
+						question the way you&apos;d ask a colleague. The assistant
+						reads through thousands of documents and
 						answers, and it shows which document the answer came from so you can
 						check it yourself. The technical name is retrieval augmented
 						generation, or RAG. I build the whole pipeline: splitting and indexing
@@ -33,11 +34,8 @@ export default function About() {
 					<p>
 						I&apos;ve done this for {getYearsOfExperience()} years, for loyalty
 						programs, business software, a railway company, and a government&apos;s
-						public documents. The results I can point to: the services I look
-						after are up 99.9% of the time, their database queries run 30% faster
-						than before, and tighter testing cut the problems reaching customers
-						by 75%. I learn most things by doing them, and I write down what I
-						learn so the next person has it easier.
+						public documents. I learn most things by doing them, and I write
+						down what I learn so the next person has it easier.
 					</p>
 				</div>
 			</div>

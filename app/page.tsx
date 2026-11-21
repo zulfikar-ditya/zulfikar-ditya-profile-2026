@@ -15,7 +15,7 @@ import Ribbon from "@/components/sections/Ribbon";
 import Tools from "@/components/sections/Tools";
 import Work from "@/components/sections/Work";
 import Writing from "@/components/sections/Writing";
-import { introStops, stations, type Stop } from "@/content/stations";
+import { introStops, outroStops, stations, type Stop } from "@/content/stations";
 import { getStationEntries, type StationEntry } from "@/lib/experience";
 
 function buildingKind(
@@ -29,7 +29,7 @@ function buildingKind(
 	return index % 2 === 0 ? "tower" : "office";
 }
 
-const allStops: Stop[] = [...introStops, ...stations];
+const allStops: Stop[] = [...introStops, ...stations, ...outroStops];
 
 const rideStops: RideStop[] = [
 	...introStops.map((stop) => ({
@@ -47,6 +47,13 @@ const rideStops: RideStop[] = [
 		buildings: getStationEntries(station).map((entry, i) => ({
 			kind: buildingKind(entry, i, station.sky === "green"),
 		})),
+	})),
+	...outroStops.map((stop) => ({
+		id: `stop-${stop.id}`,
+		look: stop.look,
+		accent: "var(--color-marigold)",
+		board: stop.board,
+		buildings: [],
 	})),
 ];
 
@@ -73,8 +80,11 @@ export default function Home() {
 						<section key={stop.id}>
 							<h2>{stop.name}</h2>
 							<p>
-								{stop.board.big?.join(" ")} {stop.board.lines.join(" ")} (
-								{stop.board.note})
+								{stop.board.big?.join(" ")} {stop.board.lines.join(" ")}{" "}
+								{stop.board.items
+									?.map((item) => `${item.title}: ${item.lines.join(" ")}`)
+									.join(" ")}{" "}
+								({stop.board.note})
 							</p>
 						</section>
 					))}

@@ -26,6 +26,9 @@ export const focusOf: Record<Look, Vec> = {
 	billboard: [-STOP_OFFSET, -120, 270],
 	wide: [-STOP_OFFSET, -120, 225],
 	wall: [40 - STOP_OFFSET, -255, 235],
+	sign: [-STOP_OFFSET, -120, 300],
+	crates: [-STOP_OFFSET, -120, 305],
+	list: [-STOP_OFFSET, -120, 315],
 };
 
 export interface StageStop {

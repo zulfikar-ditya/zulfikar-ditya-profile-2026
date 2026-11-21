@@ -14,11 +14,15 @@ interface Standing {
 	depth: number;
 }
 
+/** How far the train runs on after the last stop, enough for its last car to leave the view. */
+const DEPART = 2300;
+
 /**
  * The pinned ride. Scroll position is the only clock: it moves the world under
  * the train, turns and zooms the view from stop to stop, raises each building
  * as the train nears it, and changes the sky between stations. With reduced
- * motion the ride cuts from stop to stop instead.
+ * motion the ride cuts from stop to stop instead. One more screen of scroll
+ * after the last stop sends the train away before the page continues.
  */
 export default function RideStage({
 	stops,
@@ -39,6 +43,7 @@ export default function RideStage({
 			const nextSky = el.querySelector<HTMLElement>(".ride-next-sky");
 			const scene = el.querySelector<SVGGElement>(".ride-scene");
 			const camera = el.querySelector<SVGGElement>(".ride-camera");
+			const train = el.querySelector<SVGGElement>(".ride-train");
 			const segments = el.querySelectorAll<HTMLElement>(".ride-segment");
 			const hint = el.querySelector<HTMLElement>(".ride-hint");
 			const counts = gsap.utils.toArray<SVGTextElement>(".ride-count", el);
@@ -76,9 +81,11 @@ export default function RideStage({
 			};
 
 			const render = (raw: number) => {
-				const p = reduced ? Math.round(raw * last) / last : raw;
-				const trainX = STOP_OFFSET + p * last * GAP;
-				const at = p * last;
+				const scrolled = raw * (last + 1);
+				const at = Math.min(last, reduced ? Math.round(scrolled) : scrolled);
+				const left = gsap.utils.clamp(0, 1, scrolled - last);
+				const depart = reduced ? Math.round(left) : left * left;
+				const trainX = STOP_OFFSET + at * GAP;
 				const from = Math.min(last - 1, Math.floor(at));
 				const t = at - from;
 				const portrait = window.innerWidth / window.innerHeight < 0.8;
@@ -91,6 +98,7 @@ export default function RideStage({
 					}
 				}
 				camera?.setAttribute("transform", view.transform);
+				train?.style.setProperty("--t", (-depart * DEPART).toFixed(1));
 				reorder(view.yaw);
 
 				const wipe = gsap.utils.clamp(0, 1, (t - 0.2) / 0.6);
@@ -120,7 +128,7 @@ export default function RideStage({
 				segments.forEach((segment, i) => {
 					segment.style.opacity = i <= Math.round(at) ? "1" : "0.3";
 				});
-				if (hint) hint.style.opacity = p < 0.03 ? "1" : "0";
+				if (hint) hint.style.opacity = at < 0.2 ? "1" : "0";
 			};
 
 			const progress = { value: 0 };
@@ -146,7 +154,7 @@ export default function RideStage({
 			ref={root}
 			aria-label="My career, year by year"
 			className="relative"
-			style={{ height: `${stops.length * 100}svh` }}
+			style={{ height: `${(stops.length + 1) * 100}svh` }}
 		>
 			{stops.map((stop, i) => (
 				<div

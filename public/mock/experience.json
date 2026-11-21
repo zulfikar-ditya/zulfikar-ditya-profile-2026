@@ -5,10 +5,11 @@
 		"company": "SUPERFUTUREKOMPANY",
 		"date_start": "September 2024",
 		"date_end": "Present",
-		"summary": "I build the behind-the-scenes systems for business apps: logins, loyalty points, WhatsApp chatbots, and the databases under them. Since July 2026 I also build AI assistants that answer questions from an organisation's own documents.",
+		"summary": "I build the behind-the-scenes systems for business apps: promotions, loyalty points, donations, WhatsApp chatbots, and the tools my own company runs on. Since July 2026 I also build products on top of AI, like assistants that answer from an organisation's own documents and data.",
 		"skills": [
 			"Laravel",
 			"NestJS",
+			"Next.js",
 			"PostgreSQL",
 			"RAG Pipelines",
 			"Embeddings",
@@ -45,6 +46,9 @@
 					"Implemented guardrails across the request path including input validation, output filtering, and prompt injection mitigation, with defined fallback behaviour when a model response cannot be trusted",
 					"Integrated OpenAI, Anthropic, and OpenRouter models (DeepSeek, Qwen) with retries, timeouts, provider fallback routing, structured logging, and usage tracking",
 					"Delivered an AI assistant for enterprise feedback management, handling ingestion, semantic retrieval, and structured summarization across large volumes of customer feedback",
+					"Built a generative dashboard platform where users upload their data, ask questions in chat, get answers as charts, tables, and KPIs, and pin them to dashboards, with a WhatsApp bot on top",
+					"Built AI assistance into a procurement platform: drafting requests for quotation, matching suppliers, ranking quotations, and flagging anomalies ahead of multi level approval",
+					"Worked across the backend, the Next.js frontend, and the AI layer of these products",
 					"Moved long running inference onto queue workers to keep latency sensitive endpoints off the model call path"
 				]
 			},
@@ -56,14 +60,20 @@
 					"Optimized database performance through schema design and strategic indexing, resulting in 30% faster query execution",
 					"Integrated third party APIs (Microsoft, WhatsApp, Google) with comprehensive error handling and retry mechanisms",
 					"Implemented Redis caching and queue workers for background job processing, significantly reducing response times on heavy endpoints",
-					"Established logging and monitoring across services, maintaining 99.9% application uptime through proactive incident handling",
+					"Established logging and monitoring across services, with proactive incident handling to keep applications available",
 					"Delivered backend services for a campaign and promotion platform supporting large enterprise marketing programs",
 					"Built a receipt parsing engine powering a customer loyalty product, including parsing pipelines, validation, and points issuance workflows",
 					"Developed conversational bot services on top of the WhatsApp Business API for automated customer interactions",
 					"Engineered a multi tenant WhatsApp business messaging platform (channel and inbox style) supporting team based agent workflows",
 					"Implemented internationalization (i18n) across backend services and APIs to support multi language product rollouts",
 					"Built backend infrastructure for an AI platform management system, including model orchestration, usage tracking, and access control",
-					"Building the backend API for an in-store promotion redemption program, where shop staff submit reward claims on a customer's behalf from a mobile web app"
+					"Building the backend API for an in-store promotion redemption program, where shop staff submit reward claims on a customer's behalf from a mobile web app",
+					"Built the backend for a promotion site used across Asia Pacific markets, covering online reward claims, multi market promotions with a shared voucher pool, and gift stock tracked by market, partner, and store",
+					"Built a donation platform taking one off, recurring, and campaign donations through an online payment gateway",
+					"Built and maintain an internal project and task manager with client feedback tickets, role based access, notifications, an embeddable feedback widget, and an MCP server so AI coding assistants can read and update tasks",
+					"Rewriting an internal sales, finance, and HR back office from a Laravel monolith into a NestJS API and a Next.js interface, one module at a time on the same database",
+					"Built a candidate processing pipeline that replaced spreadsheet and email tracking: recruiter intake, HR shortlisting, single use candidate links, an auto scored test, and a management approval gate",
+					"Building an internal security scanning tool that runs open source scanners against approved staging endpoints, has an LLM propose a triage for an operator to sign off, and produces audit ready reports"
 				]
 			}
 		]
@@ -227,7 +237,7 @@
 		"company": "SEJE Digital",
 		"date_start": "March 2022",
 		"date_end": "August 2022",
-		"summary": "I tested software before it was released and connected it to outside services. That testing cut the problems reaching customers by 75%.",
+		"summary": "My first backend job. I connected our app to services run by other companies, and tested the software before it was released.",
 		"skills": [
 			"Laravel",
 			"API Integration",
@@ -247,12 +257,14 @@
 		"company": "PT Promedia Citra Informatindo",
 		"date_start": "January 2021",
 		"date_end": "June 2021",
-		"summary": "My first job in tech. I fixed bugs, wrote user manuals, and built my first Android apps.",
+		"summary": "My first job in tech. I fixed bugs, wrote user manuals, and built my first Android apps and a content management system.",
 		"skills": [
 			"Laravel",
 			"Yii Framework",
 			"Java",
+			"Android Studio",
 			"Android Development",
+			"CMS",
 			"API Development",
 			"Documentation"
 		],
@@ -260,6 +272,7 @@
 			"Identified and resolved bugs in production systems, improving overall stability and user satisfaction",
 			"Authored technical documentation and user manuals for complex software applications",
 			"Built Android applications in Java and developed REST APIs for mobile integration",
+			"Built a content management system (CMS)",
 			"Worked across both Laravel and Yii frameworks depending on project requirements"
 		]
 	}

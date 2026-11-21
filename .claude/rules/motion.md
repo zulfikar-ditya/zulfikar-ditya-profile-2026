@@ -2,7 +2,7 @@
 
 Motion tells the story: scrolling is the ride. It is not decoration.
 
-- Scroll position is the only clock. `RideStage` reads one ScrollTrigger and derives everything from its progress: world position, the turn and zoom of the view, building growth, sky wipe, number count-up, progress segments. It sets three CSS variables on the scene; CSS places every face from them. Nothing runs on a timer.
+- Scroll position is the only clock. `RideStage` reads one ScrollTrigger and derives everything from its progress: world position, the turn and zoom of the view, building growth, sky wipe, number count-up, progress segments. It sets three CSS variables on the scene; CSS places every face from them. Nothing runs on a timer. After the last stop there is one more screen of scroll: the world stays still and the train runs on out of view (`DEPART` in `RideStage`).
 - Each effect has a job: the world moving shows time passing; a building rising is a job starting; the sky wipe marks a new chapter; the count-up lands the number as the train arrives.
 - With `prefers-reduced-motion`, the ride cuts from stop to stop: no gliding, no growing, no counting.
 - Without JavaScript the scene renders at the first stop with every building standing, and all content is still in the sections below.

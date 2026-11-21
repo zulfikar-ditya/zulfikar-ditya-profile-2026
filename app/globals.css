@@ -115,6 +115,11 @@
 		transform-origin: 50% 100%;
 	}
 
+	/* A button printed on a board turns white under the pointer */
+	.ride-button:hover rect {
+		fill: var(--color-white);
+	}
+
 	/* Portrait screens zoom out so a whole station board stays in frame */
 	.ride-zoom {
 		transform-origin: 720px 450px;

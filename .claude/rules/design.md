@@ -10,7 +10,10 @@ Reference: https://github.com/habibiahmada/wrapyourgit (the story ride). Borrow 
 - **Isometric world, not a hero with text**: the owner asked for an animation timeline; the ride is the timeline.
 - **No text laid over the scene**: the board is a solid in the world, so the number belongs to the place. Only the progress bar and two small controls sit on top.
 - **Train livery (cream, red and marigold stripes)**: taken from Jakarta's commuter trains, where the owner works.
-- **Flat colour skies** (paper, marigold, red, cobalt, paper, green): one colour per chapter, so you know where you are without reading. Green appears once, for the AI line.
+- **Flat colour skies** (paper, cobalt, marigold, red, cobalt, paper, marigold, green, paper): one colour per chapter, never the same as its neighbour, so you know where you are without reading. Green appears once, for the AI line.
+- **Boards show what was built, not how good it was**: the owner dropped the uptime and bug-count figures as showing off or overclaiming. A number goes on a board only when it describes the work (40% faster integration, 8 parts of a business). Never frame a period as holding several jobs at once.
+- **The resume is a button on a board**: "Open my resume" is printed on the first and the last billboard (`board.button`). The owner rejected a sign on the train and eyes on the train; keep the train plain.
+- **The ride ends with the train leaving**: the last stop is a thank-you board, and one more screen of scroll sends the train away until its last car is gone, then the page continues.
 - **Nunito for everything**: the owner's choice. It is a plain, friendly face that a non-technical visitor reads easily, and it avoids the condensed poster fonts that AI-built sites lean on.
 - **Light page below the ride**: details are for reading, so they sit on paper with ink text.
 
@@ -43,10 +46,14 @@ Tokens live in `app/globals.css`. Use tokens, never raw hex in components.
   - `billboard`: tall ink board, big value in colour, three caption lines.
   - `wide`: low white board for a paragraph, no big value.
   - `wall`: the words lettered on the side of a building.
+  - `sign`: a marigold sign on one post with a red band for the kicker.
+  - `crates`: a stack of coloured crates, one thing built on each (`board.items`), kicker on the cap, note on the base.
+  - `list`: a tall ink board listing a few things, each under a heading in the accent colour (`board.items`).
   - `camera`: zoom, `yaw`, and a nudge. `yaw` decides which side of the train the viewer stands on, like a passenger stepping off to the left or the right. Near 0 the stop's text sits to the right of the train; near -90 the view has swung round and the text sits to the left. Neighbouring stops alternate sides, so the journey swings round the train between them. The stop's text is centred automatically whatever the angle.
 - Phones only ever stop square-on to one side or the other (yaw snaps to 0 or -90) and keep the zoom in a narrow range, because a board seen at an in-between angle is wider than the screen.
 - The scene is drawn as flat faces (`Face` / `Box` in `RideScene.tsx`), each placed by the `.f-*` rules in `app/globals.css` from three CSS variables the stage sets: `--c`, `--s` (the turn) and `--t` (where the train is). Draw anything on a face in that face's flat coordinates; never bake a projection into coordinates.
 - Keep yaw between -100 and 30. A box draws both end walls and CSS shows the one facing the viewer (`data-view` on the scene flips at -45). Lettering on a building wall (`wall` look) is only on the right-hand end, so a `wall` stop must be viewed from the right.
+- A board button is a real link inside the SVG, kept out of the tab order because the contact section has the same link. A board with a button is drawn 72 taller.
 - Text is drawn on its face, so it follows the turn. Wrap lines by hand: about 30 characters on a board, about 21 on a wall. Each stop has a plain caption and one `note` line of specifics (see `content.md`).
 - One building per job, by type: tower or office (full-time), shop (freelance), school (internship), lab (AI).
 - Portrait screens zoom the scene out (`.ride-zoom`) so a whole board stays in frame.

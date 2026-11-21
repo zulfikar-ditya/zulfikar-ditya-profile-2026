@@ -1,10 +1,14 @@
+import { resumeUrl } from "./links";
+
 export type Sky = "paper" | "marigold" | "red" | "cobalt" | "green";
 
 /**
  * How a stop presents its text: a tall billboard behind the platform, a wide
- * low board for a paragraph, or lettering on the side wall of a building.
+ * low board for a paragraph, lettering on the side wall of a building, a
+ * coloured sign on one post, a stack of crates with one thing built on each,
+ * or a tall board that lists a few things with a heading each.
  */
-export type Look = "billboard" | "wide" | "wall";
+export type Look = "billboard" | "wide" | "wall" | "sign" | "crates" | "list";
 
 /**
  * Where the camera settles at a stop. `yaw` turns the view in degrees. Near 0
@@ -25,12 +29,26 @@ export interface Camera {
  * Lines are wrapped by hand: about 30 characters on a billboard or wide board,
  * about 21 on a wall.
  */
+export interface BoardItem {
+	title: string;
+	lines: string[];
+}
+
+/**
+ * `crates` and `list` stops print `items` instead of `lines`: one line under
+ * each title on a crate (about 40 characters), two on a list (about 36).
+ */
 export interface Board {
 	kicker: string;
 	big?: string[];
 	lines: string[];
+	items?: BoardItem[];
 	note: string;
+	/** A link printed on the board as a button, under the note. */
+	button?: { label: string; url: string };
 }
+
+const resumeButton = { label: "Open my resume", url: resumeUrl };
 
 export interface Stop {
 	id: string;
@@ -61,12 +79,13 @@ export const introStops: Stop[] = [
 		name: "Hello",
 		sky: "paper",
 		look: "billboard",
-		camera: { zoom: 1.14, yaw: -8, x: 0, y: 0 },
+		camera: { zoom: 1.08, yaw: -8, x: 0, y: 30 },
 		board: {
 			kicker: "Hi, I'm",
 			big: ["Zulfikar", "Ditya"],
 			lines: ["I build software, in Jakarta.", "Scroll down and I'll show you."],
 			note: "Backend and AI engineer",
+			button: resumeButton,
 		},
 	},
 	{
@@ -81,8 +100,8 @@ export const introStops: Stop[] = [
 				"I build the part of an app you",
 				"never see: the part that checks",
 				"who you are and finds your data.",
-				"Lately I also build AI that",
-				"answers people's questions.",
+				"Lately I also build tools that",
+				"sit on top of AI models.",
 			],
 			note: "Laravel, NestJS, FastAPI, Go, PostgreSQL, RAG",
 		},
@@ -101,13 +120,13 @@ export const stations: Station[] = [
 			kicker: "2021 · where it started",
 			big: ["2021"],
 			lines: [
-				"My first job in tech: an",
-				"internship. I fixed bugs and",
-				"built my first phone app.",
+				"My first job: an internship. I",
+				"built a phone app and a system",
+				"for managing content, a CMS.",
 			],
-			note: "Laravel, Yii, REST APIs, Android in Java",
+			note: "Yii, Laravel, Java, Android Studio",
 		},
-		quotes: ["Built Android applications in Java", "Identified and resolved bugs"],
+		quotes: ["Built Android applications in Java", "Built a content management system"],
 		sources: [
 			{
 				company: "PT Promedia Citra Informatindo",
@@ -116,39 +135,55 @@ export const stations: Station[] = [
 		],
 	},
 	{
-		id: "backend-line",
-		name: "First real jobs",
-		years: "2022 to 2023",
+		id: "first-backend",
+		name: "My first backend job",
+		years: "2022",
 		sky: "red",
+		look: "sign",
+		camera: { zoom: 0.96, yaw: -88, x: 20, y: 0 },
+		board: {
+			kicker: "2022 · my first backend job",
+			lines: [
+				"I made our app work with",
+				"services that other companies",
+				"run, and keep working when",
+				"one of them failed.",
+			],
+			note: "Laravel, third-party API integration",
+		},
+		quotes: ["Integrated multiple third party APIs using Laravel"],
+		sources: [{ company: "SEJE Digital", title: "Backend Developer" }],
+	},
+	{
+		id: "business-software",
+		name: "Business software",
+		years: "2022 to 2023",
+		sky: "cobalt",
 		look: "wall",
 		camera: { zoom: 0.96, yaw: 20, x: 0, y: 20 },
 		board: {
 			kicker: "2022 to 2023",
-			big: ["75%"],
+			big: ["8"],
 			lines: [
-				"fewer problems",
-				"reaching customers,",
-				"because I tested the",
-				"software before",
-				"release.",
+				"parts of a business",
+				"in one app I helped",
+				"build: buying, sales,",
+				"stock, invoices, HR.",
 			],
-			note: "QA and test coverage",
+			note: "Full-stack ERP in Laravel",
 		},
-		quotes: ["reducing production issues by 75%"],
-		sources: [
-			{ company: "SEJE Digital", title: "Backend Developer" },
-			{ company: "Intive Studio", title: "Web App Developer" },
-		],
+		quotes: ["Purchase, Sales, Delivery, Invoice, Warehouse, Master Data, Finance, and HR"],
+		sources: [{ company: "Intive Studio", title: "Web App Developer" }],
 	},
 	{
 		id: "junction",
-		name: "Juggling five jobs",
+		name: "Building for other developers",
 		years: "2023 to 2024",
-		sky: "cobalt",
+		sky: "paper",
 		look: "billboard",
-		camera: { zoom: 0.64, yaw: -92, x: 250, y: 60 },
+		camera: { zoom: 0.78, yaw: -92, x: 120, y: 30 },
 		board: {
-			kicker: "2023 to 2024 · juggling five jobs",
+			kicker: "2023 to 2024",
 			big: ["40%"],
 			lines: [
 				"faster for other developers to",
@@ -173,22 +208,35 @@ export const stations: Station[] = [
 		id: "main-terminal",
 		name: "My main job",
 		years: "2024 to now",
-		sky: "paper",
-		look: "billboard",
-		camera: { zoom: 1.18, yaw: -4, x: 0, y: 0 },
+		sky: "marigold",
+		look: "crates",
+		camera: { zoom: 1.04, yaw: -4, x: 0, y: 0 },
 		board: {
 			kicker: "2024 to now · my main job",
-			big: ["99.9%"],
-			lines: [
-				"of the time, the apps I look",
-				"after are up and running. They",
-				"also fetch data 30% faster.",
+			lines: [],
+			items: [
+				{
+					title: "Promotions",
+					lines: ["Shoppers in Asia Pacific claim rewards."],
+				},
+				{
+					title: "Donations",
+					lines: ["One-off and recurring giving, online."],
+				},
+				{
+					title: "Tools for staff",
+					lines: ["Tasks, finance, hiring, security checks."],
+				},
 			],
-			note: "Monitoring, schema design, indexing, Redis",
+			note: "Laravel, NestJS, PostgreSQL, Redis, queues",
 		},
 		quotes: [
-			"maintaining 99.9% application uptime",
-			"resulting in 30% faster query execution",
+			"promotion site used across Asia Pacific markets",
+			"one off, recurring, and campaign donations",
+			"internal project and task manager",
+			"sales, finance, and HR back office",
+			"candidate processing pipeline",
+			"internal security scanning tool",
 		],
 		sources: [
 			{
@@ -204,22 +252,42 @@ export const stations: Station[] = [
 	},
 	{
 		id: "ai-line",
-		name: "Now building AI too",
+		name: "Whole apps, with AI inside",
 		years: "2026",
 		sky: "green",
-		look: "billboard",
-		camera: { zoom: 0.9, yaw: -84, x: 60, y: 10 },
+		look: "list",
+		camera: { zoom: 0.88, yaw: -84, x: 40, y: 10 },
 		board: {
-			kicker: "2026 · now building AI too",
-			big: ["3"],
-			lines: [
-				"AI providers wired into one",
-				"system. If one goes down, the",
-				"next one answers instead.",
+			kicker: "2026 · whole apps, with AI inside",
+			lines: [],
+			items: [
+				{
+					title: "Public documents",
+					lines: [
+						"Ask about a government rule, get",
+						"the answer and where it came from.",
+					],
+				},
+				{
+					title: "Business numbers",
+					lines: ["Ask how the business is doing", "and get a chart back."],
+				},
+				{
+					title: "Buying from suppliers",
+					lines: [
+						"It writes the request to suppliers",
+						"and compares their prices for you.",
+					],
+				},
 			],
-			note: "OpenAI, Anthropic, OpenRouter fallback",
+			note: "Backend, frontend, AI: NestJS, Next.js, RAG",
 		},
-		quotes: ["Integrated OpenAI, Anthropic, and OpenRouter models", "provider fallback routing"],
+		quotes: [
+			"question answering platform for public-sector documents",
+			"generative dashboard platform",
+			"AI assistance into a procurement platform",
+			"the backend, the Next.js frontend, and the AI layer",
+		],
 		sources: [
 			{
 				company: "SUPERFUTUREKOMPANY",
@@ -227,5 +295,23 @@ export const stations: Station[] = [
 				group: "AI Engineering",
 			},
 		],
+	},
+];
+
+/** Where the ride ends: the train leaves from here and the page takes over. */
+export const outroStops: Stop[] = [
+	{
+		id: "goodbye",
+		name: "End of the ride",
+		sky: "paper",
+		look: "billboard",
+		camera: { zoom: 1.04, yaw: -6, x: 0, y: 30 },
+		board: {
+			kicker: "That's the ride so far",
+			big: ["Thanks for", "riding along"],
+			lines: ["The details are just below, or", "you can take my resume with you."],
+			note: "Work history, tools, open source, writing",
+			button: resumeButton,
+		},
 	},
 ];
