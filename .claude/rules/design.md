@@ -46,7 +46,7 @@ Tokens live in `app/globals.css`. Use tokens, never raw hex in components.
   - `billboard`: tall ink board, big value in colour, three caption lines.
   - `wide`: low white board for a paragraph, no big value.
   - `wall`: the words lettered on the side of a building.
-  - `sign`: a marigold sign on one post with a red band for the kicker.
+  - `sign`: a marigold sign on one post with an ink band for the kicker (red would vanish into its red sky). Ink boards carry a thin steel frame so their edge reads against the dark ground; no board part uses the colour of its own sky.
   - `crates`: a stack of coloured crates, one thing built on each (`board.items`), kicker on the cap, note on the base.
   - `list`: a tall ink board listing a few things, each under a heading in the accent colour (`board.items`).
   - `camera`: zoom, `yaw`, and a nudge. `yaw` decides which side of the train the viewer stands on, like a passenger stepping off to the left or the right. Near 0 the stop's text sits to the right of the train; near -90 the view has swung round and the text sits to the left. Neighbouring stops alternate sides, so the journey swings round the train between them. The stop's text is centred automatically whatever the angle.

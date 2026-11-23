@@ -25,6 +25,12 @@ const boardTone: Tone = {
 	left: "var(--color-ink)",
 	right: "color-mix(in srgb, var(--color-ink) 88%, white)",
 };
+/** An ink board edged in steel, so its sides stay visible against the dark ground. */
+const framedTone: Tone = {
+	top: "var(--color-steel)",
+	left: "var(--color-ink)",
+	right: "color-mix(in srgb, var(--color-steel) 72%, black)",
+};
 
 /**
  * One flat face of the world, drawn in its own flat coordinates. `x`, `y`, `z`
@@ -345,14 +351,14 @@ function ListText({ board, accent }: { board: Board; accent: string }) {
 			</text>
 			{items.map((item, i) => (
 				<g key={item.title}>
-					<text x={32} y={118 + i * block} fontSize={40} className="font-display" fill={accent}>
+					<text x={32} y={128 + i * block} fontSize={40} className="font-display" fill={accent}>
 						{item.title}
 					</text>
 					{item.lines.map((line, k) => (
 						<text
 							key={line}
 							x={34}
-							y={118 + i * block + 36 + k * 32}
+							y={128 + i * block + 36 + k * 32}
 							fontSize={25}
 							className="font-sans font-semibold"
 							fill="var(--color-paper)"
@@ -364,7 +370,7 @@ function ListText({ board, accent }: { board: Board; accent: string }) {
 			))}
 			<text
 				x={34}
-				y={118 + (items.length - 1) * block + 68 + 46}
+				y={128 + (items.length - 1) * block + 68 + 46}
 				fontSize={21}
 				className="font-sans font-bold"
 				fill="var(--color-steel)"
@@ -383,7 +389,7 @@ const boardShape = {
 		half: 290,
 		z0: 60,
 		z1: 480,
-		fill: boardTone,
+		fill: framedTone,
 		text: "var(--color-paper)",
 		quiet: "var(--color-steel)",
 	},
@@ -407,13 +413,15 @@ const boardShape = {
 		half: 290,
 		z0: 60,
 		z1: 570,
-		fill: boardTone,
+		fill: framedTone,
 		text: "var(--color-paper)",
 		quiet: "var(--color-steel)",
 	},
 };
 
 const SIGN_BAND = 88;
+/** A steel frame on ink boards, so their edge stays visible against the dark ground. */
+const FRAME = 6;
 
 /** A board behind the platform, with the stop's words printed on its face. */
 function StationBoard({
@@ -456,24 +464,37 @@ function StationBoard({
 					z1={top}
 					fill={shape.fill}
 					front={
-						look === "list" ? (
-							<ListText board={board} accent={accent} />
-						) : (
-							<>
-								{look === "sign" && (
-									<rect width={shape.half * 2} height={SIGN_BAND} fill="var(--color-red)" />
-								)}
-								<BoardText
-									board={board}
-									accent={look === "wide" ? "var(--color-red)" : accent}
-									color={shape.text}
-									quiet={shape.quiet}
-									bigSize={(board.big?.length ?? 0) > 1 ? 86 : 150}
-									kickerColor={look === "sign" ? "var(--color-paper)" : undefined}
-									shift={look === "sign" ? 34 : 0}
+						<>
+							{shape.fill === framedTone && (
+								<rect
+									x={FRAME / 2}
+									y={FRAME / 2}
+									width={shape.half * 2 - FRAME}
+									height={top - shape.z0 - FRAME}
+									fill="none"
+									stroke="var(--color-steel)"
+									strokeWidth={FRAME}
 								/>
-							</>
-						)
+							)}
+							{look === "list" ? (
+								<ListText board={board} accent={accent} />
+							) : (
+								<>
+									{look === "sign" && (
+										<rect width={shape.half * 2} height={SIGN_BAND} fill="var(--color-ink)" />
+									)}
+									<BoardText
+										board={board}
+										accent={look === "wide" ? "var(--color-red)" : accent}
+										color={shape.text}
+										quiet={shape.quiet}
+										bigSize={(board.big?.length ?? 0) > 1 ? 86 : 150}
+										kickerColor={look === "sign" ? "var(--color-paper)" : undefined}
+										shift={look === "sign" ? 34 : 0}
+									/>
+								</>
+							)}
+						</>
 					}
 				/>
 				{look === "list" && (
@@ -484,7 +505,7 @@ function StationBoard({
 						y1={BOARD_Y}
 						z0={shape.z1}
 						z1={shape.z1 + 16}
-						fill={tone(accent)}
+						fill={framedTone}
 					/>
 				)}
 			</g>
