@@ -5,7 +5,7 @@
 		"company": "SUPERFUTUREKOMPANY",
 		"date_start": "September 2024",
 		"date_end": "Present",
-		"summary": "I build the behind-the-scenes systems for business apps: promotions, loyalty points, donations, WhatsApp chatbots, and the tools my own company runs on. Since July 2026 I also build products on top of AI, like assistants that answer from an organisation's own documents and data.",
+		"summary": "I build the server side of business apps: promotions and receipt-based loyalty programs, WhatsApp chatbots and messaging, donations, and the tools my own company runs on. Since July 2026 I also build products with AI inside, like assistants that answer from an organisation's own documents and data.",
 		"skills": [
 			"Laravel",
 			"NestJS",
@@ -59,8 +59,9 @@
 					"Built role based authentication and authorization systems hardening security across several internal and client facing applications",
 					"Optimized database performance through schema design and strategic indexing, resulting in 30% faster query execution",
 					"Integrated third party APIs (Microsoft, WhatsApp, Google) with comprehensive error handling and retry mechanisms",
-					"Implemented Redis caching and queue workers for background job processing, significantly reducing response times on heavy endpoints",
-					"Established logging and monitoring across services, with proactive incident handling to keep applications available",
+					"Used Redis and BullMQ on a NestJS WhatsApp platform: cached signed-in user profiles so login checks skip the database, stored chat flow sessions, added a Redis lock so scheduled jobs run on one server only, and moved webhook events and email onto queues",
+					"Moved slow work onto Laravel queue workers: WhatsApp broadcasts sent one job per recipient under a global rate limit with retries, incoming media downloads, receipt OCR with fraud checks, and CRM sync",
+					"Added logging and an error activity log across services, so problems are quick to trace",
 					"Delivered backend services for a campaign and promotion platform supporting large enterprise marketing programs",
 					"Built a receipt parsing engine powering a customer loyalty product, including parsing pipelines, validation, and points issuance workflows",
 					"Developed conversational bot services on top of the WhatsApp Business API for automated customer interactions",
@@ -84,24 +85,21 @@
 		"company": "Self Employed",
 		"date_start": "December 2025",
 		"date_end": "April 2026",
-		"summary": "I led two developers building a company's website. I planned how it would be built, set up the servers it runs on, and wrote code alongside them.",
+		"summary": "I led two developers building a company's website. I planned how it would be built, set up the server it runs on, and wrote code alongside them.",
 		"skills": [
 			"Team Leadership",
-			"Project Management",
-			"Technical Strategy",
-			"Cross-functional Collaboration",
-			"Mentorship",
 			"Next.js",
 			"Bun",
 			"CI/CD",
-			"Cloud Deployment"
+			"Server Setup",
+			"Code Review"
 		],
 		"descriptions": [
-			"Led a team of two web developers on a company profile website, coordinating task distribution and ensuring delivery against scope and timeline",
-			"Designed end to end frontend and backend architecture using Next.js and Bun runtime",
-			"Configured production server infrastructure and CI/CD pipelines to automate build and deployment",
-			"Ran code reviews and established quality standards, delivering a stable, high performance application meeting all client requirements",
-			"Contributed hands on to frontend and backend implementation alongside coordinating the team"
+			"Led a team of two web developers on a company profile website, splitting up the tasks and keeping the work to scope and timeline",
+			"Designed the frontend and backend architecture using Next.js and the Bun runtime",
+			"Set up the production server and the CI/CD pipeline that builds and deploys the site",
+			"Reviewed the team's code and set the quality standards",
+			"Wrote frontend and backend code alongside the team"
 		]
 	},
 	{
@@ -110,15 +108,16 @@
 		"company": "PT Anomali Trans Teknologi",
 		"date_start": "September 2024",
 		"date_end": "September 2024",
-		"summary": "I built a business app for a railway company on a tight deadline, using a tool that needs very little hand-written code.",
+		"summary": "I came back for a short freelance job on the railway company's stock app, and built its login through an outside sign-in service.",
 		"skills": [
 			"Mendix",
 			"Low-code Development",
-			"PostgreSQL"
+			"Authentication",
+			"Third-party Integration"
 		],
 		"descriptions": [
-			"Delivered a custom Mendix application for PT KAI Indonesia, focusing on rapid low code delivery against critical business deadlines",
-			"Collaborated with cross functional teams to translate complex business logic into functional flows within tight delivery windows"
+			"Worked as part of a team on PT KAI Indonesia's inventory management app, built on Mendix",
+			"Built the app's authentication through a third-party login provider"
 		]
 	},
 	{
@@ -127,24 +126,23 @@
 		"company": "Self Employed",
 		"date_start": "May 2024",
 		"date_end": "March 2025",
-		"summary": "I worked directly with clients. I listened to what they needed, sketched it, built it, and put it online.",
+		"summary": "I built landing pages for clients on my own: I agreed with each client what they needed, sketched it, built it and put it online.",
 		"skills": [
 			"Laravel",
-			"Pest Testing",
 			"MySQL",
+			"Pest Testing",
 			"Git",
 			"CI/CD",
-			"Notion",
-			"Deployment",
-			"Database Architecture"
+			"Deployment"
 		],
 		"descriptions": [
-			"Worked directly with clients to define scope, target users, and required functionality, documenting requirements end to end",
-			"Designed wireframes and prototypes iteratively with client feedback",
-			"Modeled relational data using MySQL with proper normalization and ERDs for clear table relationships",
-			"Built applications using Laravel MVC with Eloquent, Composer, and Pest for unit testing",
-			"Used Git for version control and Trello / Notion for Agile task tracking",
-			"Set up development, staging, and production environments with CI/CD pipelines for automated testing and deployment"
+			"Built landing pages in Laravel for clients, working with them directly and alone from start to finish",
+			"Agreed scope and requirements with each client and documented them",
+			"Designed wireframes and prototypes and revised them with client feedback",
+			"Designed the MySQL databases behind them",
+			"Wrote unit tests with Pest",
+			"Set up development, staging and production environments with CI/CD, and deployed the sites myself",
+			"Used Git for version control"
 		]
 	},
 	{
@@ -153,20 +151,24 @@
 		"company": "PT Anomali Trans Teknologi",
 		"date_start": "June 2023",
 		"date_end": "September 2024",
-		"summary": "I built and looked after web apps that handle a lot of data, and designed how that data is stored so it stays correct and quick to find.",
+		"summary": "I worked on a team building apps for clinics, offices and government, mostly on the server side: patient records, expense claims, project tracking, legal letters and stock.",
 		"skills": [
 			"Laravel",
 			"MySQL",
 			"PostgreSQL",
 			"Mendix",
-			"ASP.NET"
+			"ASP.NET",
+			"Queues",
+			"Database Design"
 		],
 		"descriptions": [
-			"Designed and optimized PostgreSQL schemas supporting high volume web applications with complex business logic",
-			"Built and maintained full stack web applications using Laravel MVC with focus on data integrity and security",
-			"Implemented Eloquent ORM for efficient data interactions, reducing code complexity by 25% through proper relationship management",
-			"Expanded technical coverage by delivering solutions on Mendix low code platform and ASP.NET",
-			"Facilitated alignment between design and product teams to keep technical implementation in step with user requirements"
+			"Worked as a full-stack developer under a team lead, mostly on the backend, building and maintaining Laravel web apps",
+			"Built a clinic app end to end, including patient records",
+			"Built an expense reimbursement app and an internal project management app",
+			"Built a project management app for BMKG",
+			"Built an inventory management app for PT KAI on Mendix",
+			"Built a management app for legal demand letters (somasi) on ASP.NET",
+			"Designed the database schemas for these apps on MySQL and PostgreSQL"
 		]
 	},
 	{
@@ -175,19 +177,19 @@
 		"company": "PT SEJE Digital Utama",
 		"date_start": "October 2023",
 		"date_end": "May 2024",
-		"summary": "I built the connections that let different apps share data safely, and wrote the instructions other developers needed to use them.",
+		"summary": "I built the server side of a system that takes students through applying to college, connected it to outside services, and wrote the guide other developers used to work with it.",
 		"skills": [
 			"Laravel",
 			"API Development",
-			"Security Implementation",
+			"API Integration",
 			"API Documentation",
-			"API Integration"
+			"Postman"
 		],
 		"descriptions": [
-			"Engineered secure and optimized APIs for data exchange between web applications and external services (Hue Huy, Aku Hadir)",
-			"Implemented data validation, sanitization, and encryption to protect against common web vulnerabilities",
-			"Authored detailed API documentation and versioning protocols, enabling smooth frontend and third party integration",
-			"Designed intuitive endpoint contracts with frontend teams, reducing integration time by 40%"
+			"Built the whole backend and APIs for a college admission management system in Laravel",
+			"Integrated the system with the Hue Huy and Aku Hadir third-party services",
+			"Wrote the API documentation in Postman",
+			"Designed endpoint contracts with the frontend team, reducing integration time by 40%"
 		]
 	},
 	{
@@ -196,18 +198,16 @@
 		"company": "Intive Studio",
 		"date_start": "June 2023",
 		"date_end": "March 2024",
-		"summary": "I built business software that handles money in several currencies, where a wrong number is not an option.",
+		"summary": "I kept working on the same gas trading company's software as a freelancer, adding support for money in more than one currency.",
 		"skills": [
 			"Laravel",
-			"ERP Development",
-			"Multi-currency Systems",
-			"Database Architecture",
-			"Debugging"
+			"ERP Systems",
+			"MySQL",
+			"Multi-currency Systems"
 		],
 		"descriptions": [
-			"Built custom ERP applications handling multi currency transactions with 100% accuracy on financial data",
-			"Architected efficient database structures supporting complex enterprise business logic",
-			"Resolved critical system issues through advanced debugging and code analysis, reducing system downtime by 50%"
+			"Continued development of the gas trading ERP as a freelancer, working from tasks set by the project manager",
+			"Built multi-currency support for the system's transactions"
 		]
 	},
 	{
@@ -216,19 +216,20 @@
 		"company": "Intive Studio",
 		"date_start": "July 2022",
 		"date_end": "June 2023",
-		"summary": "I built the software companies use to run their day: buying, selling, stock, invoices and staff. I also coached newer developers.",
+		"summary": "Fresh out of school, I built the business software a gas trading company runs on: buying, selling, stock, and parts of finance and HR. I also handed out work to newer developers and checked it.",
 		"skills": [
 			"Laravel",
 			"ERP Systems",
-			"Financial Systems",
-			"HR Management Systems",
-			"Warehouse Management Systems"
+			"MySQL",
+			"Approval Workflows",
+			"Inventory Management"
 		],
 		"descriptions": [
-			"Core developer on custom ERP web applications, designing scalable architectures for enterprise clients",
-			"Implemented ERP modules across Purchase, Sales, Delivery, Invoice, Warehouse, Master Data, Finance, and HR",
-			"Mentored junior developers on complex algorithms and Laravel best practices, improving team productivity by 35%",
-			"Led code reviews enforcing high quality, maintainable code through rigorous standards"
+			"Built a custom ERP from scratch in Laravel for a gas trading company",
+			"Built the master data, purchase request with multi-step approval, purchase order, goods receiving, and stock modules",
+			"Worked on the sales system",
+			"Built parts of the finance and HR management modules",
+			"Assigned tasks to junior developers and reviewed their work"
 		]
 	},
 	{
@@ -237,18 +238,20 @@
 		"company": "SEJE Digital",
 		"date_start": "March 2022",
 		"date_end": "August 2022",
-		"summary": "My first backend job. I connected our app to services run by other companies, and tested the software before it was released.",
+		"summary": "My first backend job. I built the server side of a technician booking app, and of flight booking systems that talk directly to two airlines.",
 		"skills": [
 			"Laravel",
 			"API Integration",
-			"Quality Assurance",
-			"Testing",
-			"Third-party APIs"
+			"Third-party APIs",
+			"Payment Gateway",
+			"Maps API"
 		],
 		"descriptions": [
-			"Conducted thorough QA and testing, reducing production issues by 75% through stronger test coverage",
-			"Integrated multiple third party APIs using Laravel, expanding application functionality with robust error handling",
-			"Used workflow diagrams to plan and optimize code structure for long term maintainability"
+			"Built the backend and admin panel for a technician call-out app, where admins manage engineers and their jobs",
+			"Built a flight booking system integrated from scratch with the Garuda Indonesia ticketing API",
+			"Built a separate flight booking system integrated from scratch with the Citilink ticketing API",
+			"Integrated payment and maps services",
+			"Handled errors and retries on every outside service, so a failed call could be tried again instead of losing the booking"
 		]
 	},
 	{
@@ -257,23 +260,19 @@
 		"company": "PT Promedia Citra Informatindo",
 		"date_start": "January 2021",
 		"date_end": "June 2021",
-		"summary": "My first job in tech. I fixed bugs, wrote user manuals, and built my first Android apps and a content management system.",
+		"summary": "My first job in tech. I worked on tasks from senior developers: fixing an Android app, building a school website, and making practice apps to learn a new framework.",
 		"skills": [
 			"Laravel",
 			"Yii Framework",
 			"Java",
-			"Android Studio",
-			"Android Development",
-			"CMS",
-			"API Development",
-			"Documentation"
+			"Android",
+			"CMS"
 		],
 		"descriptions": [
-			"Identified and resolved bugs in production systems, improving overall stability and user satisfaction",
-			"Authored technical documentation and user manuals for complex software applications",
-			"Built Android applications in Java and developed REST APIs for mobile integration",
-			"Built a content management system (CMS)",
-			"Worked across both Laravel and Yii frameworks depending on project requirements"
+			"Fixed bugs in an Android app written in Java",
+			"Built a content management system in Laravel for a school's landing page",
+			"Built a smart village app and a library app on the Yii framework as learning projects (not deployed)",
+			"Worked from tasks assigned by senior developers"
 		]
 	}
 ]

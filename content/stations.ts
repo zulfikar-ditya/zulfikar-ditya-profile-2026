@@ -121,12 +121,12 @@ export const stations: Station[] = [
 			big: ["2021"],
 			lines: [
 				"My first job: an internship. I",
-				"built a phone app and a system",
-				"for managing content, a CMS.",
+				"fixed a phone app and built a",
+				"website for a school.",
 			],
-			note: "Yii, Laravel, Java, Android Studio",
+			note: "Java, Android, Laravel, Yii",
 		},
-		quotes: ["Built Android applications in Java", "Built a content management system"],
+		quotes: ["Fixed bugs in an Android app written in Java", "content management system in Laravel"],
 		sources: [
 			{
 				company: "PT Promedia Citra Informatindo",
@@ -144,14 +144,14 @@ export const stations: Station[] = [
 		board: {
 			kicker: "2022 · my first backend job",
 			lines: [
-				"I made our app work with",
-				"services that other companies",
-				"run, and keep working when",
-				"one of them failed.",
+				"I built the server side of a",
+				"technician booking app, and",
+				"flight booking that talks to",
+				"two airlines directly.",
 			],
-			note: "Laravel, third-party API integration",
+			note: "Laravel, Garuda Indonesia and Citilink APIs",
 		},
-		quotes: ["Integrated multiple third party APIs using Laravel"],
+		quotes: ["Garuda Indonesia ticketing API", "Citilink ticketing API"],
 		sources: [{ company: "SEJE Digital", title: "Backend Developer" }],
 	},
 	{
@@ -168,11 +168,15 @@ export const stations: Station[] = [
 				"parts of a business",
 				"in one app I helped",
 				"build: buying, sales,",
-				"stock, invoices, HR.",
+				"stock, finance, HR.",
 			],
-			note: "Full-stack ERP in Laravel",
+			note: "Laravel ERP for a gas trading company",
 		},
-		quotes: ["Purchase, Sales, Delivery, Invoice, Warehouse, Master Data, Finance, and HR"],
+		quotes: [
+			"purchase request with multi-step approval",
+			"Worked on the sales system",
+			"finance and HR management modules",
+		],
 		sources: [{ company: "Intive Studio", title: "Web App Developer" }],
 	},
 	{
@@ -186,11 +190,11 @@ export const stations: Station[] = [
 			kicker: "2023 to 2024",
 			big: ["40%"],
 			lines: [
-				"faster for other developers to",
-				"connect their apps to mine. We",
-				"agreed the rules up front.",
+				"faster for the frontend team to",
+				"plug into the server I built.",
+				"We agreed the rules up front.",
 			],
-			note: "Endpoint contracts and API documentation",
+			note: "Endpoint contracts, API docs in Postman",
 		},
 		quotes: ["reducing integration time by 40%"],
 		sources: [
@@ -220,8 +224,8 @@ export const stations: Station[] = [
 					lines: ["Shoppers in Asia Pacific claim rewards."],
 				},
 				{
-					title: "Donations",
-					lines: ["One-off and recurring giving, online."],
+					title: "Loyalty points",
+					lines: ["Send a receipt on WhatsApp, get points."],
 				},
 				{
 					title: "Tools for staff",
@@ -232,7 +236,7 @@ export const stations: Station[] = [
 		},
 		quotes: [
 			"promotion site used across Asia Pacific markets",
-			"one off, recurring, and campaign donations",
+			"receipt parsing engine powering a customer loyalty product",
 			"internal project and task manager",
 			"sales, finance, and HR back office",
 			"candidate processing pipeline",
