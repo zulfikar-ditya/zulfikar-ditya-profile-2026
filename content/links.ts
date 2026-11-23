@@ -4,7 +4,7 @@ export interface SiteLink {
 }
 
 export const resumeUrl =
-	"https://drive.google.com/file/d/1wU2TJMpLU6Z8oAIkq0M16IeK3xisho1M/view?usp=sharing";
+	"https://drive.google.com/file/d/1I3QVYKdzjkvy4zboBhQa9mDO1PM_D9qc/view?usp=sharing";
 
 export const mediumUrl = "https://medium.com/@zulfikarditya";
 
