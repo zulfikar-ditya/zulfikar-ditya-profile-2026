@@ -1,137 +1,132 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
-@custom-variant dark (&:is(.dark *));
-
-html {
-	scroll-behavior: smooth;
-}
 
 @theme inline {
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
-	--radius-2xl: calc(var(--radius) + 8px);
-	--radius-3xl: calc(var(--radius) + 12px);
-	--radius-4xl: calc(var(--radius) + 16px);
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--color-card: var(--card);
-	--color-card-foreground: var(--card-foreground);
-	--color-popover: var(--popover);
-	--color-popover-foreground: var(--popover-foreground);
-	--color-primary: var(--primary);
-	--color-primary-foreground: var(--primary-foreground);
-	--color-secondary: var(--secondary);
-	--color-secondary-foreground: var(--secondary-foreground);
-	--color-muted: var(--muted);
-	--color-muted-foreground: var(--muted-foreground);
-	--color-accent: var(--accent);
-	--color-accent-foreground: var(--accent-foreground);
-	--color-destructive: var(--destructive);
-	--color-border: var(--border);
-	--color-input: var(--input);
-	--color-ring: var(--ring);
-	--color-chart-1: var(--chart-1);
-	--color-chart-2: var(--chart-2);
-	--color-chart-3: var(--chart-3);
-	--color-chart-4: var(--chart-4);
-	--color-chart-5: var(--chart-5);
-	--color-sidebar: var(--sidebar);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-ring: var(--sidebar-ring);
+	--color-paper: #f3ede0;
+	--color-white: #fffdf7;
+	--color-ink: #17150f;
+	--color-asphalt: #35322b;
+	--color-steel: #b9b2a3;
+	--color-red: #d9342b;
+	--color-marigold: #f2b21b;
+	--color-cobalt: #2b4acb;
+	--color-green: #39d353;
 
-	/* Portfolio Design Tokens — Terminal Precision */
-	--color-p-base: #060610;
-	--color-p-surface: #0d0d1e;
-	--color-p-card: #101022;
-	--color-p-border: #1a1a2e;
-	--color-p-border-bright: #2a2a42;
-	--color-p-accent: #c4ff00;
-	--color-p-ink: #dddad4;
-	--color-p-muted: #64637a;
-	--color-p-dim: #343252;
-}
-
-:root {
-	--radius: 0.625rem;
-	--background: oklch(1 0 0);
-	--foreground: oklch(0.141 0.005 285.823);
-	--card: oklch(1 0 0);
-	--card-foreground: oklch(0.141 0.005 285.823);
-	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.141 0.005 285.823);
-	--primary: oklch(0.21 0.006 285.885);
-	--primary-foreground: oklch(0.985 0 0);
-	--secondary: oklch(0.967 0.001 286.375);
-	--secondary-foreground: oklch(0.21 0.006 285.885);
-	--muted: oklch(0.967 0.001 286.375);
-	--muted-foreground: oklch(0.552 0.016 285.938);
-	--accent: oklch(0.967 0.001 286.375);
-	--accent-foreground: oklch(0.21 0.006 285.885);
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.92 0.004 286.32);
-	--input: oklch(0.92 0.004 286.32);
-	--ring: oklch(0.705 0.015 286.067);
-	--chart-1: oklch(0.646 0.222 41.116);
-	--chart-2: oklch(0.6 0.118 184.704);
-	--chart-3: oklch(0.398 0.07 227.392);
-	--chart-4: oklch(0.828 0.189 84.429);
-	--chart-5: oklch(0.769 0.188 70.08);
-	--sidebar: oklch(0.985 0 0);
-	--sidebar-foreground: oklch(0.141 0.005 285.823);
-	--sidebar-primary: oklch(0.21 0.006 285.885);
-	--sidebar-primary-foreground: oklch(0.985 0 0);
-	--sidebar-accent: oklch(0.967 0.001 286.375);
-	--sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-	--sidebar-border: oklch(0.92 0.004 286.32);
-	--sidebar-ring: oklch(0.705 0.015 286.067);
+	--font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
-	* {
-		@apply border-border outline-ring/50;
+	html {
+		scroll-snap-type: y proximity;
 	}
 	body {
-		background-color: #060610;
-		color: #dddad4;
-		overflow-x: hidden;
+		@apply bg-paper text-ink font-sans;
+		overflow-x: clip;
+	}
+	a[href],
+	button,
+	summary,
+	label[for] {
+		cursor: pointer;
+	}
+	:focus-visible {
+		outline: 3px solid currentColor;
+		outline-offset: 3px;
+	}
+	::selection {
+		@apply bg-ink text-paper;
 	}
 }
 
-/* Font utility classes */
-@layer utilities {
-	.font-display {
-		font-family: var(--font-syne), sans-serif;
-	}
-	.font-jetbrains {
-		font-family: var(--font-jetbrains-mono), monospace;
-	}
+/* Display type: Nunito at its heaviest, for the board numbers and section headings */
+@utility font-display {
+	font-family: var(--font-sans);
+	font-weight: 900;
+	letter-spacing: -0.02em;
+	line-height: 1;
 }
 
-/* Text selection */
-::selection {
-	background-color: #c4ff00;
-	color: #060610;
-}
+@layer components {
+	/*
+	 * The ride is drawn as flat faces, each placed by CSS from three numbers the
+	 * stage sets on the scene: --c and --s (cosine and sine of the view's turn)
+	 * and --t (where the train is). A face gives its own corner as --x, --y, --z.
+	 * Turning the corner about the train and projecting it gives the offset; the
+	 * matrix's first four numbers skew the face onto its plane.
+	 */
+	.f {
+		--rx: calc(var(--x) - var(--t));
+		--px: calc(var(--rx) * var(--c) - var(--y) * var(--s));
+		--py: calc(var(--rx) * var(--s) + var(--y) * var(--c));
+		--tx: calc(var(--px) - var(--py));
+		--ty: calc((var(--px) + var(--py)) / 2 - var(--z));
+	}
+	/* Flat on the ground or a roof: u runs along x, v along y */
+	.f-top {
+		transform: matrix(
+			calc(var(--c) - var(--s)),
+			calc((var(--c) + var(--s)) / 2),
+			calc(0 - var(--s) - var(--c)),
+			calc((var(--c) - var(--s)) / 2),
+			var(--tx),
+			var(--ty)
+		);
+	}
+	/* A wall along x, facing down-left: u runs along x, v down */
+	.f-y {
+		transform: matrix(
+			calc(var(--c) - var(--s)),
+			calc((var(--c) + var(--s)) / 2),
+			0,
+			1,
+			var(--tx),
+			var(--ty)
+		);
+	}
+	/* The opposite wall along y, seen once the view has swung past 45 degrees to the left */
+	.f-xr {
+		transform: matrix(
+			calc(0 - var(--s) - var(--c)),
+			calc((var(--c) - var(--s)) / 2),
+			0,
+			1,
+			var(--tx),
+			var(--ty)
+		);
+	}
+	.ride-scene[data-view="rear"] .f-x,
+	.ride-scene:not([data-view="rear"]) .f-xr {
+		display: none;
+	}
+	/* A wall along y, facing down-right: u runs from its near corner back, v down */
+	.f-x {
+		transform: matrix(
+			calc(var(--s) + var(--c)),
+			calc((var(--s) - var(--c)) / 2),
+			0,
+			1,
+			var(--tx),
+			var(--ty)
+		);
+	}
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-	width: 3px;
-}
-::-webkit-scrollbar-track {
-	background: #060610;
-}
-::-webkit-scrollbar-thumb {
-	background: #1a1a2e;
-}
-::-webkit-scrollbar-thumb:hover {
-	background: #c4ff00;
+	/* Buildings grow from the ground as the train nears them */
+	.ride-rise {
+		transform-box: fill-box;
+		transform-origin: 50% 100%;
+	}
+
+	/* A button printed on a board turns white under the pointer */
+	.ride-button:hover rect {
+		fill: var(--color-white);
+	}
+
+	/* Portrait screens zoom out so a whole station board stays in frame */
+	.ride-zoom {
+		transform-origin: 720px 450px;
+	}
+	@media (max-aspect-ratio: 4/5) {
+		.ride-zoom {
+			transform: scale(0.66);
+		}
+	}
 }

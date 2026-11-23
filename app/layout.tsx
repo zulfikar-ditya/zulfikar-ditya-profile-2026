@@ -1,34 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Syne, JetBrains_Mono } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const nunito = Nunito({
+	variable: "--font-nunito",
 	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
-});
-
-const syne = Syne({
-	variable: "--font-syne",
-	subsets: ["latin"],
-	weight: ["400", "600", "700", "800"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-	variable: "--font-jetbrains-mono",
-	subsets: ["latin"],
-	weight: ["400", "500"],
 });
 
 const siteUrl = "https://zulfikarditya.com";
 const siteName = "Zulfikar Ditya";
-const siteTitle = `${siteName} - Backend & AI Engineer | Laravel, Node.js, Go, RAG`;
+const siteTitle = `${siteName} - Backend & AI Engineer | Laravel, NestJS, RAG`;
 const siteDescription =
-	"Zulfikar Ditya Antariksa — Backend Engineer with 5+ years of experience building scalable APIs and high-performance systems using Laravel, Node.js, Bun, and Go, now extending into applied AI engineering with RAG pipelines, embeddings, and LLM guardrails. Proven track record in clean architecture, database optimization, and CI/CD pipelines.";
+	"Zulfikar Ditya Antariksa, Backend and AI Engineer in Jakarta with 5+ years building APIs, integrations and queue-based systems in Laravel and NestJS, now building RAG pipelines, embeddings and LLM guardrails on pgvector and Qdrant.";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
@@ -59,7 +42,6 @@ export const metadata: Metadata = {
 		"Backend Developer",
 		"AI Engineer",
 		"Laravel Developer",
-		"Go Developer",
 		"Node.js Developer",
 		"NestJS",
 		"Bun",
@@ -247,6 +229,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<head>
+				<noscript>
+					<style>{`.split-heading{visibility:visible!important}.js-only{display:none}.no-js-only{position:static!important;width:auto!important;height:auto!important;margin:0!important;clip:auto!important;clip-path:none!important;white-space:normal!important}`}</style>
+				</noscript>
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
@@ -261,7 +246,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} ${jetbrainsMono.variable} antialiased`}
+				className={`${nunito.variable} antialiased`}
 			>
 				{children}
 			</body>

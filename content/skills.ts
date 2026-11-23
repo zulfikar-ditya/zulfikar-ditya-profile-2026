@@ -1,0 +1,138 @@
+export interface SkillGroup {
+	id: string;
+	label: string;
+	/** What the group is for, in words a non-technical reader understands. */
+	plain: string;
+	line: "ai" | "backend" | "support";
+	skills: string[];
+}
+
+export const skillGroups: SkillGroup[] = [
+	{
+		id: "ai-engineering",
+		label: "AI",
+		plain: "Getting software to answer questions from documents, and to admit when it doesn't know.",
+		line: "ai",
+		skills: [
+			"Retrieval Augmented Generation (RAG)",
+			"Embeddings",
+			"Chunking Strategies",
+			"pgvector",
+			"Qdrant",
+			"Context Assembly",
+			"Prompt Engineering",
+			"System Prompt Design",
+			"LLM Guardrails",
+			"Output Validation",
+			"Prompt Injection Mitigation",
+			"Self-hosted models (vLLM, Ollama)",
+			"LangChain",
+			"LangGraph",
+			"Langfuse",
+			"OCR",
+			"OpenAI",
+			"Anthropic",
+			"OpenRouter",
+		],
+	},
+	{
+		id: "languages",
+		label: "Languages",
+		plain: "The languages I write code in.",
+		line: "backend",
+		skills: ["PHP", "TypeScript", "JavaScript", "Python", "Golang"],
+	},
+	{
+		id: "backend-frameworks",
+		label: "Frameworks",
+		plain: "Ready-made foundations, so I don't rebuild the basics for every app.",
+		line: "backend",
+		skills: [
+			"Laravel",
+			"NestJS",
+			"FastAPI",
+			"Express",
+			"Fastify",
+			"Hono",
+			"Elysia",
+			"Fiber",
+			"Gin",
+		],
+	},
+	{
+		id: "databases",
+		label: "Databases",
+		plain: "Where the data lives, and how to find it quickly.",
+		line: "backend",
+		skills: [
+			"PostgreSQL",
+			"MySQL",
+			"MongoDB",
+			"Redis",
+			"Query Tuning",
+			"Indexing",
+			"Schema Design",
+			"N+1 Mitigation",
+			"Eloquent",
+			"Drizzle ORM",
+			"Prisma",
+		],
+	},
+	{
+		id: "queues",
+		label: "Queues and messaging",
+		plain: "Handing slow work to the background, so the app stays quick for the person using it.",
+		line: "backend",
+		skills: ["Kafka", "BullMQ", "Redis Queues", "Queue Workers"],
+	},
+	{
+		id: "system-architecture",
+		label: "System design",
+		plain: "How the parts of a system fit together and stay safe.",
+		line: "backend",
+		skills: [
+			"RESTful API Design",
+			"OAuth 2.0 & JWT",
+			"Clean Architecture",
+			"DTOs & Validation",
+			"Horizontal Scaling",
+			"Caching Strategy",
+			"Rate Limiting",
+		],
+	},
+	{
+		id: "devops",
+		label: "Servers and releases",
+		plain: "Getting software online, and getting new versions out without breaking it.",
+		line: "support",
+		skills: [
+			"Docker",
+			"Nginx",
+			"GitHub Actions",
+			"GitLab CI/CD",
+			"Server Configuration",
+			"Deployment Pipelines",
+			"PM2",
+		],
+	},
+	{
+		id: "monitoring",
+		label: "Keeping watch",
+		plain: "Noticing a problem before the people using the app do.",
+		line: "support",
+		skills: [
+			"Logging & Metrics",
+			"Uptime Monitoring",
+			"Incident Handling",
+			"Query Performance Tuning",
+			"Load Optimization",
+		],
+	},
+	{
+		id: "frontend",
+		label: "The part you see",
+		plain: "Screens and buttons. Not my main job, but I can help.",
+		line: "support",
+		skills: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+	},
+];
