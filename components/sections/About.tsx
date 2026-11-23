@@ -17,14 +17,14 @@ export default function About() {
 						you are, find your data, and send back the right answer in under a
 						second. I build that part. Engineers call it the backend: the APIs,
 						databases and queues behind the screen. Mine are mostly built with
-						Laravel and NestJS, with Go, Bun and Python (FastAPI) where they fit.
+						Laravel and NestJS, with Bun and Python (FastAPI) where they fit.
 					</p>
 					<p>
 						Since 2026 I&apos;ve also built products on top of AI models. One
 						is an assistant for a government&apos;s public documents. You ask a
 						question the way you&apos;d ask a colleague. The assistant
-						reads through thousands of documents and
-						answers, and it shows which document the answer came from so you can
+						searches the documents and answers, in
+						Indonesian or English, and it shows which document the answer came from so you can
 						check it yourself. The technical name is retrieval augmented
 						generation, or RAG. I build the whole pipeline: splitting and indexing
 						the documents, searching them with pgvector and Qdrant, and adding
@@ -32,9 +32,10 @@ export default function About() {
 						can&apos;t be trusted.
 					</p>
 					<p>
-						I&apos;ve done this for {getYearsOfExperience()} years, for loyalty
-						programs, business software, a railway company, and a government&apos;s
-						public documents. I learn most things by doing them, and I write
+						I&apos;ve done this for {getYearsOfExperience()} years: flight
+						booking with two airlines, a clinic&apos;s records, a gas trading
+						company&apos;s business software, loyalty points you earn by sending
+						a receipt on WhatsApp, and a government&apos;s public documents. I learn most things by doing them, and I write
 						down what I learn so the next person has it easier.
 					</p>
 				</div>
